@@ -1,0 +1,11 @@
+#!/bin/bash
+if (( $# < 1));
+then
+	echo "commit message required"
+	exit
+fi
+hugo
+rsync -av public/ server:~/web/calendariumculinarium.de
+git add .
+git commit -m "$1"
+#git push

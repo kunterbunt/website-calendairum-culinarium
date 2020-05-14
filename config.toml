@@ -1,0 +1,4 @@
+baseURL = "http://calendariumculinarium.de/"
+languageCode = "de"
+title = "Calendarium Culinarium"
+theme = "ananke"
