@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Slow Food Youth Deutschland</title>
-    <link>http://calendariumculinarium.de/tags/</link>
-    <description>Recent content in Tags on Slow Food Youth Deutschland</description>
+    <title>Tags on Calendarium Culinarium</title>
+    <link>https://calendariumculinarium.de/tags/</link>
+    <description>Recent content in Tags on Calendarium Culinarium</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
     
-	<atom:link href="http://calendariumculinarium.de/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://calendariumculinarium.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

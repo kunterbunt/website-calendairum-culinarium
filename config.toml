@@ -1,4 +1,76 @@
-baseURL = "http://calendariumculinarium.de/"
+baseurl = "https://calendariumculinarium.de/"
 languageCode = "de"
-title = "Slow Food Youth Deutschland"
-theme = "ananke"
+title = "Calendarium Culinarium"
+theme = "hugo-creative-theme"
+googleAnalytics = ""
+
+[params]
+
+	# You can use Markdown syntax for urls [text](//url.to/source) for
+	# most longer texts.
+
+	# All icons using Fontawesome's icon font. Look at http://fontawesome.io/icons/
+	# for more icons. The icons are represented by their corresponding
+	# CSS class.
+
+	# All projects of the portfolio are defined in their own files.
+	# You can find example projects at 'exampleSite/data/projects'. Copy the 'projects'
+	# folder into the 'data' directory at the root of this Hugo site.
+	# For more information take a look at the README.
+
+	# To provide some metadata for search engines feel free to add some
+	# information about you and your website.
+	name = "Your name"
+	description = "Your description"
+
+	# The path must be relative to the static folder
+	favicon = "favicon.ico"
+
+
+	# Navigation
+	[params.navigation]
+		brand = "Slow Food Youth"
+
+		[params.navigation.links]
+			about     = "Über uns"
+			services  = "Kaufen"						
+
+
+	# Hero section
+	[params.hero]
+		# To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
+		slogan     = "Calendarium Culinarium"
+		subtitle   = "Der Saisonkalender von Slow Food Youth Deutschland"
+		buttonText = "Mehr erfahren"
+
+
+	# About section
+	[params.about]
+		headline    = "Projektidee"
+		description = "Der Calendarium Culinarium ist ein Saisonkalender designt von Slow Food Youth Deutschland. Inspiriert vom [Schweizer Original](http://calendariumculinarium.com)."
+		
+
+
+	# Service section
+	[params.services]
+		headline = "Bald hier mehr"
+
+        [[params.services.list]]
+            icon = ""
+            title = ""
+            description = ""
+
+        [[params.services.list]]
+			icon = "fa-paper-plane"
+			title = "Bestellung"
+			description = "Schon bald kannst Du den Calendarium Culinarium hier bestellen!"
+
+		[[params.services.list]]
+            icon = "fa-heart"
+            title = "Made with Love"
+            description = "Wir haben viel Liebe in das Design gesteckt, und der Erlös geht komplett in Projekte von Slow Food Youth!"
+
+		[[params.services.list]]
+            icon = ""
+            title = ""
+            description = ""            
