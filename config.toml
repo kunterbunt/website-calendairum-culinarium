@@ -47,7 +47,7 @@ googleAnalytics = ""
 	# About section
 	[params.about]
 		headline    = "Projektidee"
-		description = "Der Calendarium Culinarium ist ein Saisonkalender designt von Slow Food Youth Deutschland. Inspiriert vom [Schweizer Original](http://calendariumculinarium.com)."
+		description = "Das Calendarium Culinarium ist ein Saisonkalender designt von Slow Food Youth Deutschland. Inspiriert vom [Schweizer Original](http://calendariumculinarium.com)."
 		
 
 
