@@ -2,6 +2,10 @@ body {
     font-family: 'Poppins';
 }
 
+.carousel-item img {
+    object-fit: cover;
+}
+
 #fixed {
     height: 50vh;
     background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url("/theme-imgs/calendarium_bw-web-sm.jpg") no-repeat center center fixed;
