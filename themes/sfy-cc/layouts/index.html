@@ -1,16 +1,136 @@
-{{ partial "head.html" . }}
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">      
-      <main class="page-content" style="height: 100%">
-        <div class="mdl-grid mdl-grid--no-spacing" style="background: url(imgs/kitchen_background.jpg); height: 100%">                                  
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-cell mdl-cell--6-col mdl-typography--text-center" style="margin-top: 10vh;">
-                <h1>CALENDARIUM CULINARIUM</h1>
-                <h2>Der Saisonkalender von Slow Food Youth</h2>
-            </div>                  
-            <div class="mdl-layout-spacer"></div>
+<!DOCTYPE html>
+<html lang="de">
+  {{ partial "head.html" . }}
+  <body>
+      <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="theme-imgs/cc_title_trans.png"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#description">what?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#detailed-description">why?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">how?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#order">buy!</a>
+              </li>
+            </ul>
+          </div>          
+        </div>
+      </nav>
+
+      <!-- Main image. It's not really a carousel, but it could be. :) -->
+      <div id="slides" class="carousel slide" data-ride="carousel">        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="theme-imgs/kitchen_background_darkened.jpg" class="d-block w-100" style="min-height: calc(100vh - 56px);">
+            <div class="carousel-caption">
+              <h1 class="display-4">Calendarium Culinarium</h1>
+              <h3>Der Saisonkalender von Slow Food Youth Deutschland</h3>
+              <div style="height: 2em;"></div>
+              <div>
+                <a href="https://www.slowfood.de/" target="_blank" rel="noopener noreferrer"><img src="theme-imgs/slow_food_logo.png" class="img-fluid" style="max-width: 25vw;"></a>
+              </div>
+              <div style="height: 4em;"></div>
+            </div>
+          </div>          
+        </div>
+      </div>
+
+      <!-- The description. -->
+      <div id="description" class="container-fluid">
+        <div class="row jumbotron">
+          <div class="col-12">
+            <p class="lead">Das Calendarium Culinarium ist ein Saisonkalender, der schön und informativ ist und gleichzeitig Gutes tut.</p>
+          </div>          
+        </div>
+      </div>
+
+      <!-- The detailled description. -->
+      <div id="detailed-description" class="container-fluid">
+        <div class="row text-center">
+          <div class="col-xs-12 col-lg-6">
+            <p class="lead">Insgesamt 50 handgezeichnete Obst- und Gemüsearten bilden die wundervolle Vielfalt hiesiger Lebensmittel ab.</p>
+            <p class="lead">Der umgebende Kreis gibt Auskunft über die Monate, in denen das jeweilige Objekt der Begierde in Deutschland verfügbar ist – sei es „Frisch vom Feld“ oder als „Lagerware“.</p>
+            <p class="lead">Der Kalender ist in einem ehrenamtlichen Projekt entstanden.</p>
+            <p class="lead">Mit Deinem Kauf unterstützt Du weitere Projekte von Slow Food Deutschland e.V. und leistest so einen kleinen Beitrag zu einem zukunftsfähigen Ernährungssystem.</p>
+          </div>
+          <div class="col-cs-12 col-lg-6">
+            <img src="theme-imgs/calendarium_bw-web-sm.jpg" class="img-fluid" style="max-height: 60vh;">
+          </div>
+        </div>
+        <div style="height: 2em;"></div>
+      </div>
+
+      <!-- The features. -->
+      <div class="container-fluid">
+        <div id="features" class="row jumbotron text-center">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">BLICKFANG</p>
+            <p>ein absoluter Hingucker</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">GUTER ZWECK</p>
+            <p>alle Erlöse fließen in die Arbeit von Slow Food Deutschland e.V.</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">NACHHALTIG GEDRUCKT</p>
+            <p>bei einer klimaneutralen Druckerei mit NatureOffice Zertifikat</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">KOSTENLOSER VERSAND</p>
+            <p>innerhalb Deutschlands übernehmen wir den Versand</p>
+          </div>
+          <div class="col-12" style="height: 2em;"></div>
+          <div class="col-12">
+            <button class="fun btn btn-outline-dark btn-lg" data-toggle="collapse" data-target="#klappentext">Ich möchte noch mehr wissen</button>
+          </div>
+          <div id="klappentext" class="collapse">
+            <div class="container-fluid">
+              <div class="row text-center">
+                <div class="col-12" style="height: 4em;"></div>
+                <p>Hier folgen bald noch mehr Details...</p>      
+              </div>
+            </div>
+          </div>
         </div>        
-        <!-- {{partial "footer.html" .}} -->
-      </main>
-    </div>
-</body>  
+      </div>
+
+      <!-- Sneak preview section. -->
+      <div id="fixed-container" class="container-fluid">
+        <div id="fixed" class="row col-12"></div>
+      </div>
+
+      <!-- Ordering button. -->
+      <div id="order" class="container-fluid">
+        <div class="row text-center">
+          <div class="col-12" style="height: 4em;"></div>
+          <div class="col-12">
+            <h1 class="display-4">Ich möchte einen haben</h1>
+            <p style="height: 2em;"></p>
+            <p>Prima! Leider sind wir noch nicht ganz so weit. Schaue demnächst hier wieder rein, dann werdet ihr an dieser Stelle das Bestellformular finden.</p>            
+          </div>          
+          <div class="col-12" style="height: 10em;"></div>
+        </div>
+      </div>
+
+      <!-- Footer. -->
+      <footer>
+        <div class="container-fluid">
+          <div class="row text-center">
+            <div class="col-12">
+              <p>Ein Projekt von <a href="https://www.slowfood.de/wirueberuns/slowfoodyouth" target="_blank" rel="noopener noreferrer">Slow Food Youth Deutschland</a>.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>  
+</html>

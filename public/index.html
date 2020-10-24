@@ -1,274 +1,149 @@
 <!DOCTYPE html>
-<html class="no-js" lang="de">
-<head>
+<html lang="de">
+  <head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    <title>Calendarium Culinarium</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Calendarium Culinarium </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Hugo 0.73.0" />
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/themefisher-fonts.css">
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/owl.carousel.css">
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/animate.css">
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/style.css">
     <!-- Responsive Stylesheet -->
-    <link rel="stylesheet" href="https://calendariumculinarium.de/css/responsive.css">
-
-    
+    <link rel="stylesheet" href="https://calendariumculinarium.de/bootstrap-4.5.3-dist/css/bootstrap.min.css"></script>    
+    <script src="https://calendariumculinarium.de/bootstrap-4.5.3-dist/js/jquery-3.5.1.min.js"></script>    
+    <script src="https://calendariumculinarium.de/bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>    
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://calendariumculinarium.de/css/style.css">    
 </head>
 
-<body id="body">
-
-<div id="preloader">
-    <div class="book">
-        <div class="book__page"></div>
-        <div class="book__page"></div>
-        <div class="book__page"></div>
-    </div>
-</div>
-        
-<div class="container">
-    <nav class="navbar navbar-fixed-top  navigation " id="top-nav">
-        <a class="navbar-brand float-none float-lg-left" href="https://calendariumculinarium.de/">
-            
-            <img src="imgs/cc_title.png" alt="logo">
-            
-        </a>
-        <button class="navbar-toggler hidden-lg-up float-lg-right" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <i class="tf-ion-android-menu"></i>
-        </button>
-        <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-            <ul class="nav navbar-nav menu float-lg-right" id="top-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="https://calendariumculinarium.de/#home">
-                         what? 
-                    </a>
-                </li>
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendariumculinarium.de/#about">
-                             why? 
-                        </a>
-                    </li>
-                
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendariumculinarium.de/#service">
-                             how? 
-                        </a>
-                    </li>
-                
-                
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendariumculinarium.de/#contact">
-                             buy! 
-                        </a>
-                    </li>
-                
+  <body>
+      <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="theme-imgs/cc_title_trans.png"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#description">what?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#detailed-description">why?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">how?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#order">buy!</a>
+              </li>
             </ul>
+          </div>          
         </div>
-    </nav>
-</div>
+      </nav>
 
-
-    <!-- Hero Area Section -->
-    <section id="home" class="hero-area" style='background-image: url(" imgs/kitchen_background_darkened.jpg");'>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-6">
-                    <div class="block">
-                        
-                        <h1 class="wow fadeInDown" data-wow-delay="0.3s" data-wow-duration=".2s">
-                            CALENDARIUM CULINARIUM
-                        </h1>
-                        
-                        
-                        <p class="wow fadeInDown" data-wow-delay="0.5s" data-wow-duration=".5s">
-                            Der Saisonkalender von Slow Food Youth
-                        </p>
-                        
-                        
-                        <div class="wow fadeInDown" data-wow-delay="0.7s" data-wow-duration=".7s">
-                            <a class="btn btn-home nav-link" href="#about" role="button">                               
-                                Zeig mir mehr!
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                <div class="col-lg-5 col-md-6 wow zoomIn">
-                    <div class="block">
-                        <div class="counter text-center">
-                            <ul id="countdown_dashboard" data-year=" 2020" data-month=" 12" data-day=" 31">                                
-                                <img src="imgs/snail.png" width="100%"></img>                                                                                                                               
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
+      
+      <div id="slides" class="carousel slide" data-ride="carousel">        
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="theme-imgs/kitchen_background_darkened.jpg" class="d-block w-100" style="min-height: calc(100vh - 56px);">
+            <div class="carousel-caption">
+              <h1 class="display-4">Calendarium Culinarium</h1>
+              <h3>Der Saisonkalender von Slow Food Youth Deutschland</h3>
+              <div style="height: 2em;"></div>
+              <div>
+                <a href="https://www.slowfood.de/" target="_blank" rel="noopener noreferrer"><img src="theme-imgs/slow_food_logo.png" class="img-fluid" style="max-width: 25vw;"></a>
+              </div>
+              <div style="height: 4em;"></div>
             </div>
-            
+          </div>          
         </div>
-        
-    </section>
+      </div>
 
+      
+      <div id="description" class="container-fluid">
+        <div class="row jumbotron">
+          <div class="col-12">
+            <p class="lead">Das Calendarium Culinarium ist ein Saisonkalender, der schön und informativ ist und gleichzeitig Gutes tut.</p>
+          </div>          
+        </div>
+      </div>
 
+      
+      <div id="detailed-description" class="container-fluid">
+        <div class="row text-center">
+          <div class="col-xs-12 col-lg-6">
+            <p class="lead">Insgesamt 50 handgezeichnete Obst- und Gemüsearten bilden die wundervolle Vielfalt hiesiger Lebensmittel ab.</p>
+            <p class="lead">Der umgebende Kreis gibt Auskunft über die Monate, in denen das jeweilige Objekt der Begierde in Deutschland verfügbar ist – sei es „Frisch vom Feld“ oder als „Lagerware“.</p>
+            <p class="lead">Der Kalender ist in einem ehrenamtlichen Projekt entstanden.</p>
+            <p class="lead">Mit Deinem Kauf unterstützt Du weitere Projekte von Slow Food Deutschland e.V. und leistest so einen kleinen Beitrag zu einem zukunftsfähigen Ernährungssystem.</p>
+          </div>
+          <div class="col-cs-12 col-lg-6">
+            <img src="theme-imgs/calendarium_bw-web-sm.jpg" class="img-fluid" style="max-height: 60vh;">
+          </div>
+        </div>
+        <div style="height: 2em;"></div>
+      </div>
 
-    <!-- About Section -->
-    <section id="about" class="section about bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7 col-sm-12 wow fadeInLeft">
-                    <div class="content">
-                        <div class="sub-heading">
-                        
-                            <h3>Das Calendarium Culinarium ist von einer Truppe junger Slow Food Aktivist*Innen ehrenamtlich entworfen worden.</h3>
-                        
-                        </div>
-                        
-                            <p>Inspiriert vom Schweizer Original, ist der Saisonkalender ein schönes Designobjekt in jeder Küche. Hochwertig und nachhaltig gedruckt, unterstützt Du mit deinem Kauf gleichzeitig weitere Projekte von Slow Food Youth, und tust so auch einen kleinen Teil für ein nachhaltigeres Lebensmittelsystem.</p>
-                        
-                    </div>
-                </div>
-                <div class="col-md-5 col-sm-12 wow fadeInLeft" data-wow-delay="0.3s">
-                    <div class="about-slider">
-                        
-                            <img src="imgs/calendarium_bw-web.jpg" alt="Slider image">
-                        
-                    </div>
-                </div>
+      
+      <div class="container-fluid">
+        <div id="features" class="row jumbotron text-center">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">BLICKFANG</p>
+            <p>ein absoluter Hingucker</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">GUTER ZWECK</p>
+            <p>alle Erlöse fließen in die Arbeit von Slow Food Deutschland e.V.</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">NACHHALTIG GEDRUCKT</p>
+            <p>bei einer klimaneutralen Druckerei mit NatureOffice Zertifikat</p>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <p class="lead">KOSTENLOSER VERSAND</p>
+            <p>innerhalb Deutschlands übernehmen wir den Versand</p>
+          </div>
+          <div class="col-12" style="height: 2em;"></div>
+          <div class="col-12">
+            <button class="fun btn btn-outline-dark btn-lg" data-toggle="collapse" data-target="#klappentext">Ich möchte noch mehr wissen</button>
+          </div>
+          <div id="klappentext" class="collapse">
+            <div class="container-fluid">
+              <div class="row text-center">
+                <div class="col-12" style="height: 4em;"></div>
+                <p>Hier folgen bald noch mehr Details...</p>      
+              </div>
             </div>
+          </div>
+        </div>        
+      </div>
+
+      
+      <div id="fixed-container" class="container-fluid">
+        <div id="fixed" class="row col-12"></div>
+      </div>
+
+      
+      <div id="order" class="container-fluid">
+        <div class="row text-center">
+          <div class="col-12" style="height: 4em;"></div>
+          <div class="col-12">
+            <h1 class="display-4">Ich möchte einen haben</h1>
+            <p style="height: 2em;"></p>
+            <p>Prima! Leider sind wir noch nicht ganz so weit. Schaue demnächst hier wieder rein, dann werdet ihr an dieser Stelle das Bestellformular finden.</p>            
+          </div>          
+          <div class="col-12" style="height: 10em;"></div>
         </div>
-    </section>
+      </div>
 
-
-
-    <!-- Service Section -->
-    <section id="service" class="service section">
-        <div class="container">
-            <div class="row">
-                <div class="heading wow fadeInUp">
-                    
-                        <h2>Was im Calendarium Culinarium alles steckt</h2>
-                    
-                    
-                        <p>mit diesem Saisonkalender kaufst du sicher kein Produkt von der Stange</p>
-                    
-                </div>
-                
-                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0s">
-                        <div class="block">
-                            <i class="tf-ion-heart"></i>
-                            <h3>nachhaltig gedruckt</h3>
-                            <p>bei einer klimaneutralen Druckerei mit NatureOffice Zertifikat</p>
-                        </div>
-                    </div>
-                
-                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.2s">
-                        <div class="block">
-                            <i class=" tf-ion-happy"></i>
-                            <h3>ehrenamtlich designt</h3>
-                            <p>wir sind Aktivist*Innen bei Slow Food</p>
-                        </div>
-                    </div>
-                
-                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.4s">
-                        <div class="block">
-                            <i class="tf-ion-android-hand"></i>
-                            <h3>handgezeichnet</h3>
-                            <p>wir haben viel Liebe in das Design gesteckt</p>
-                        </div>
-                    </div>
-                
-                    <div class="col-sm-6 col-md-3 wow fadeInLeft" data-wow-delay="0.6s">
-                        <div class="block">
-                            <i class=" tf-ion-arrow-resize"></i>
-                            <h3>Konsummengen reflektiert</h3>
-                            <p>die Größe gibt die relativen Verzehrmengen in Kartoffelland an</p>
-                        </div>
-                    </div>
-                
+      
+      <footer>
+        <div class="container-fluid">
+          <div class="row text-center">
+            <div class="col-12">
+              <p>Ein Projekt von <a href="https://www.slowfood.de/wirueberuns/slowfoodyouth" target="_blank" rel="noopener noreferrer">Slow Food Youth Deutschland</a>.</p>
             </div>
+          </div>
         </div>
-    </section>
-
-
-
-    <!-- Call To Action Section -->
-    <section class="call-to-action" style='background-image: url("imgs/calendarium_bw-web.jpg")' >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 wow text-center">
-                    <div class="block" style="min-height: 33vh;">
-                        
-                        
-                            <p>Ein kleiner Sneak-Preview in den Kalender... :)</p>
-                        
-                        <div class="col-lg-6 offset-lg-3">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="block">
-                        <div class="heading wow fadeInUp">
-                            
-                            <h2>Ich möchte einen haben</h2>
-                            
-                            
-                                <p>Prima! Leider sind wir noch nicht ganz so weit. Schaue demnächst hier wieder rein, dann werdet ihr an dieser Stelle das Bestellformular finden.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block">
-                    <p>Ein Projekt von <a style="text-decoration: underline;" href="https://slowfoodyouth.de">Slow Food Youth Deutschland</a>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-<!-- Js -->
-<script src="https://calendariumculinarium.de/js/vendor/jquery-2.1.1.min.js"></script>
-<script src="https://calendariumculinarium.de/js/bootstrap.min.js"></script>
-<script src="https://calendariumculinarium.de/js/vendor/modernizr-2.6.2.min.js"></script>
-<script src="https://calendariumculinarium.de/js/jquery.lwtCountdown-1.0.js"></script>
-<script src="https://calendariumculinarium.de/js/owl.carousel.min.js"></script>
-<script src="https://calendariumculinarium.de/js/jquery.validate.min.js"></script>
-<script src="https://calendariumculinarium.de/js/jquery.form.js"></script>
-<script src="https://calendariumculinarium.de/js/jquery.nav.js"></script>
-<script src="https://calendariumculinarium.de/js/wow.min.js"></script>
-<script src="https://calendariumculinarium.de/js/main.js"></script>
-
-</body>
-
+      </footer>
+  </body>  
 </html>

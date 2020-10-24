@@ -1,0 +1,83 @@
+baseurl = "https://calendariumculinarium.de/"
+languageCode = "de"
+title = "Calendarium Culinarium"
+theme = "infinity-hugo"
+removePathAccents = true
+[params]
+
+# HTML before the closing </head>
+customHead = ""
+
+# Navigation
+[params.navigation]
+logo = "imgs/cc_title.png"
+home = "what?"
+about = "why?"
+service = "how?"
+contact = "buy!"
+
+# Hero Area
+[params.hero]
+enable            = true
+bg                = "imgs/kitchen_background_darkened.jpg"
+title             = "CALENDARIUM CULINARIUM"
+subtitle          = "Der Saisonkalender von Slow Food Youth"
+btnText           = "Zeig mir mehr!"
+
+# counter
+disableCountdown  = false
+countdownYear = "2020"
+countdownMonth = "12"
+countdownDay  = "31"
+
+# About Section
+[params.about]
+enable      = true
+heading     = "Das Calendarium Culinarium ist von einer Truppe junger Slow Food Aktivist*Innen ehrenamtlich entworfen worden."
+description = "Inspiriert vom Schweizer Original, ist der Saisonkalender ein schönes Designobjekt in jeder Küche. Hochwertig und nachhaltig gedruckt, unterstützt Du mit deinem Kauf gleichzeitig weitere Projekte von Slow Food Youth, und tust so auch einen kleinen Teil für ein nachhaltigeres Lebensmittelsystem."
+
+[[params.about.sliderItem]]
+image   = "imgs/calendarium_bw-web.jpg"
+
+
+# Service Section
+[params.service]
+enable      = true
+title       = "Was im Calendarium Culinarium alles steckt"
+subtitle    = "mit diesem Saisonkalender kaufst du sicher kein Produkt von der Stange"
+[[params.service.serviceItem]]
+icon    = "tf-ion-heart"
+title   = "nachhaltig gedruckt"
+description = "bei einer klimaneutralen Druckerei mit NatureOffice Zertifikat"
+delay   = "0s"
+
+[[params.service.serviceItem]]
+icon    = " tf-ion-happy"
+title   = "ehrenamtlich designt"
+description = "wir sind Aktivist*Innen bei Slow Food"
+delay   = "0.2s"
+
+[[params.service.serviceItem]]
+icon    = "tf-ion-android-hand"
+title   = "handgezeichnet"
+description = "wir haben viel Liebe in das Design gesteckt"
+delay   = "0.4s"
+
+[[params.service.serviceItem]]
+icon    = " tf-ion-arrow-resize"
+title   = "Konsummengen reflektiert"
+description = "die Größe gibt die relativen Verzehrmengen in Kartoffelland an"
+delay   = "0.6s"
+
+
+# Call to Action Section
+[params.cta]
+enable      = true
+bg          = "imgs/calendarium_bw-web.jpg"
+title       = ""
+subtitle    = "Ein kleiner Sneak-Preview in den Kalender... :)"
+
+[params.contact]
+enable      = true
+title       = "Ich möchte einen haben"
+subtitle    = "Prima! Leider sind wir noch nicht ganz so weit. Schaue demnächst hier wieder rein, dann werdet ihr an dieser Stelle das Bestellformular finden."

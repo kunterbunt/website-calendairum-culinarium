@@ -14,9 +14,3 @@ min_version = "0.41.0"
   name = "Sebastian Lindner"
   homepage = ""
   email = "sebastian@slowfoodyouthh.de"
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""

@@ -1,0 +1,66 @@
+body {
+    font-family: 'Poppins';
+}
+
+#fixed {
+    height: 50vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url("/theme-imgs/calendarium_bw-web-sm.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    margin: 0;
+}
+
+#fixed-container {
+    padding: 0;
+}
+
+#features {
+    margin-bottom: 0;
+}
+
+footer {
+    color: #dfdfdf;;
+    background-color: #272727;;
+    padding: 2em 0;
+    margin: 0;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: white;
+    
+}
+
+footer a {
+    color: #dfdfdf;;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #dfdfdf;;
+}
+
+footer p {
+    margin: 0;
+}
+
+.btn-primary {
+    background-color: #d40000;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #d40000;
+    color: #272727;
+}
+
+.btn-primary:focus {
+    background-color: #d40000;
+    color: #272727;
+    border-color: #343a40;
+}
