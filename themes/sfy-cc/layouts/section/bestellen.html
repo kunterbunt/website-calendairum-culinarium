@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+  {{ partial "head.html" . }}
+  <body>
+      <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="../theme-imgs/cc_title_trans.png"></a>
+          <div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Zurück</a>
+              </li>
+            </ul>
+          </div>  
+        </div>
+      </nav>
+
+      <!-- Ordering form. -->
+      <div class="container-fluid">
+          <div class="row col-12">
+            <div id="order" class="card mx-auto">
+                <img class="card-img-top" src="../theme-imgs/calendarium_bw-web-sm.jpg" alt="Card image cap">
+                <div class="card-body text-center">
+                <h5 class="card-title">Bestellformular</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <!-- Anzahl -->
+                        <div class="form-group">
+                            <label for="form-amount">Anzahl</label>
+                            <input id="form-amount" class="form-control" min="1" value="1" type="number">
+                        </div>
+                        <!-- Preis -->
+                        <input class="form-control" id="price" type="text" placeholder="schaue Preis nach..." disabled>
+                        <hr>
+                        <!-- Name & Email -->
+                        <div class="form-group">
+                            <label for="form-name">Voller Name</label>
+                            <input type="text" class="form-control" id="form-name" placeholder="Wird als Adressat verwendet">
+                            <label for="form-email">Emailadresse</label>
+                            <input type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse hier eingeben">
+                            <small id="emailHelp" class="form-text text-muted">Wir geben Ihre Emailadresse an niemanden weiter.</small>
+                        </div>                                        
+                        <!-- Slow Food Mitglied -->
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="slow-food-member-check">
+                            <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>
+                            <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
+                        </div>
+                        <hr>
+                        <!-- Adresse -->
+                        <div class="form-group">
+                            <label for="form-address-street">Straße und Hausnr.</label>
+                            <input type="text" class="form-control" id="form-address-street" placeholder="Luisenstr. 45">
+                            <label for="form-address-code">Postleitzahl</label>
+                            <input type="number" class="no-spinner form-control" id="form-address-code" placeholder="PLZ">
+                            <label for="form-address-city">Stadt</label>
+                            <input type="text" class="form-control" id="form-address-city" placeholder="Stadt">
+                        </div>  
+                        <hr>
+                        <!-- freie Nachricht -->
+                        <div class="form-group">
+                            <label for="form-additional">Eine Nachricht an uns</label>
+                            <textarea name="Text1" class="form-control" id="form-additional" rows="4" placeholder="Schicken Sie uns hier eine persönliche Nachricht! Von Feedback zur Anfrage des Versands außerhalb Deutschlands."></textarea>
+                        </div>
+                        <hr>
+                        <!-- Bezahlmethode -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="bestellmethoden" id="pay-rechnung" value="option1" checked>
+                            <label class="form-check-label" for="pay-rechnung">
+                            auf Rechnung
+                            </label>
+                        </div>                    
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="bestellmethoden" id="pay-paypal" value="option2">
+                            <label class="form-check-label" for="pay-paypal">
+                            PayPal
+                            </label>
+                        </div>
+                        <div class="submit-button-container">
+                            <button id="place-order-button" type="submit" class="btn btn-primary btn-lg btn-outline-light">Bestellen!</button>
+                        </div>                    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

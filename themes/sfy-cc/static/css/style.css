@@ -83,3 +83,28 @@ footer p {
     color: #dfdfdf;;
     background-color: #272727;;
 }
+
+a.card-link {
+    color: #272727;
+}
+
+input.no-spinner::-webkit-outer-spin-button,
+input.no-spinner::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input.no-spinner[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.submit-button-container {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#order {
+    margin: 2em 0;
+    max-width: 30rem;
+}
