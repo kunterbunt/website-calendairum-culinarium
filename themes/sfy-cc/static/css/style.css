@@ -21,6 +21,15 @@ body {
     padding: 0;
 }
 
+#description .row, p {
+    margin-bottom: 0;
+}
+
+#detailed-description {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
 #features {
     margin-bottom: 0;
 }
@@ -68,4 +77,9 @@ footer p {
     background-color: #d40000;
     color: #272727;
     border-color: #343a40;
+}
+
+.dark {
+    color: #dfdfdf;;
+    background-color: #272727;;
 }
