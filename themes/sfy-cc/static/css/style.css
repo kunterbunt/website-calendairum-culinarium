@@ -73,7 +73,7 @@ footer p {
     color: #272727;
 }
 
-.btn-primary:focus {
+.btn-primary:focus, .btn-primary:disabled {
     background-color: #d40000;
     color: #272727;
     border-color: #343a40;

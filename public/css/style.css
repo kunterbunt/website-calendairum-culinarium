@@ -21,6 +21,15 @@ body {
     padding: 0;
 }
 
+#description .row, p {
+    margin-bottom: 0;
+}
+
+#detailed-description {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
 #features {
     margin-bottom: 0;
 }
@@ -64,8 +73,38 @@ footer p {
     color: #272727;
 }
 
-.btn-primary:focus {
+.btn-primary:focus, .btn-primary:disabled {
     background-color: #d40000;
     color: #272727;
     border-color: #343a40;
+}
+
+.dark {
+    color: #dfdfdf;;
+    background-color: #272727;;
+}
+
+a.card-link {
+    color: #272727;
+}
+
+input.no-spinner::-webkit-outer-spin-button,
+input.no-spinner::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input.no-spinner[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+.submit-button-container {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#order {
+    margin: 2em 0;
+    max-width: 30rem;
 }
