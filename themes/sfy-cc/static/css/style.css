@@ -100,11 +100,56 @@ input.no-spinner[type=number] {
 }
 
 .submit-button-container {
-    margin-top: 1em;
+    margin-top: 1em;    
+}
+
+.center-text {
     text-align: center;
 }
 
 #order {
     margin: 2em 0;
     max-width: 30rem;
+}
+
+.loader {
+    margin-left: 102px;
+    margin-bottom: 32px;
+    border: 4px solid #e9ecef; /* Light grey */
+    border-top: 4px solid #d40000; /* Blue */
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hide {
+    display: none !important;
+}
+
+#problem-button {
+    margin-bottom: 16px;
+}
+
+#server-response {
+    margin-bottom: 32px;
+}
+
+#server-response-2 {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#server-response-3 {
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+#server-response-4 { 
+    margin-bottom: 16px;
 }
