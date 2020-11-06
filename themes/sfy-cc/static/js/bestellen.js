@@ -11,15 +11,42 @@ var getUrlParameter = function getUrlParameter(sParam) {
             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
         }
     }
+    return ""
 };
 
-$('document').ready(function(){
-    $("#form-amount").val(getUrlParameter('amount'))
-    $("#form-name").val(getUrlParameter('name'))
-    $("#form-email").val(getUrlParameter('email'))
-    $("#form-address-street").val(getUrlParameter('address_street'))
-    $("#form-address-code").val(getUrlParameter('address_code'))
-    $("#form-address-city").val(getUrlParameter('address_city'))
-    $("#slow-food-member-check").prop('checked', getUrlParameter('slow_food_member') == 'on' ? true : false)
-    $("#form-additional").val(getUrlParameter('message').replace(/\+/g, ' '))
-})
+var app = new Vue({
+    el: '#order',
+    delimiters: ['[[', ']]'],
+    data: {
+        price: 20,
+        amount: 0
+    },
+    methods: {
+        computeCurrentPrice() {
+            var discount = 0
+            if (this.amount < 3) {
+                discount = 0
+            } else if (this.amount < 5) {
+                discount = .1
+            } else if (this.amount < 50) {
+                discount = 0.15
+            } else {
+                discount = 0.2
+            }
+            var price_before_discount = this.amount * this.price
+            var price_after_discount = price_before_discount * (1-discount)
+            return price_after_discount + (discount > 0 ? " (" + (discount*100) + "% Rabatt!)" : "")
+        }
+    },
+    mounted() {
+        this.amount = parseInt(getUrlParameter('amount'))
+        $("#form-amount").val(this.amount)
+        $("#form-name").val(getUrlParameter('name'))
+        $("#form-email").val(getUrlParameter('email'))
+        $("#form-address-street").val(getUrlParameter('address_street'))
+        $("#form-address-code").val(getUrlParameter('address_code'))
+        $("#form-address-city").val(getUrlParameter('address_city'))
+        $("#slow-food-member-check").prop('checked', getUrlParameter('slow_food_member') == 'on' ? true : false)
+        $("#form-additional").val(getUrlParameter('message').replace(/\+/g, ' '))
+    }
+});

@@ -28,19 +28,19 @@
                 </div>
                 <div class="card-body text-center">
                   <p>Bis Ende November nehmen wir nur Vorbestellungen an.</p>
-                  <p>Ab Anfang Dezember startet dann der Versand.</p>
+                  <p>Anfang Dezember startet dann der Versand.</p>
                 </div>
                 <div class="card-body">
                     <form action="/bestellung">
                         <!-- Anzahl -->
                         <div class="form-group">
                             <label for="form-amount">Anzahl</label>
-                            <input required id="form-amount" name="amount" class="form-control" min="1" value="1" type="number">
+                            <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number">
                         </div>
                         <!-- Preis -->
                         <div class="form-group">
                           <label for="form-amount">Preis in Euro</label>
-                          <input readonly style="pointer-events: none;" min="1" class="form-control" id="form-price" value="20€ pro Kalender"></input>
+                          <input readonly style="pointer-events: none;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
                           <p><strong>Banküberweisung</strong> geht!</p>
                           <p><strong>PayPal</strong> geht!</p>
                           <p>Hinweise mit der Bestellbestätigung.</p>
@@ -100,6 +100,7 @@
         </div>
     </div>
   
+    <script src="{{ `js/vue-2.6.12.js` | absURL }}"></script>    
     <script src="{{ `js/bestellen.js` | absURL }}"></script>    
     </body>
 </html>
