@@ -42,20 +42,20 @@
                       <!-- Name & Email -->
                       <div class="form-group">
                           <label for="form-name">Vor- und Nachname</label>
-                          <input disabled :value="[[name]]" name="name" type="text" class="form-control" id="form-name" placeholder="Wird als Adressat verwendet">
+                          <input disabled :value="[[name]]" name="name" type="text" class="form-control" id="form-name" >
                           <label for="form-email">Emailadresse</label>
-                          <input disabled :value="[[email]]" name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse hier eingeben">
+                          <input disabled :value="[[email]]" name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp">
                           <small id="emailHelp" class="form-text text-muted">Wir geben Ihre Emailadresse an niemanden weiter.</small>
                       </div>                                                                
                       <hr>
                       <!-- Adresse -->
                       <div class="form-group">
                           <label for="form-address-street">Straße und Hausnr.</label>
-                          <input disabled :value="[[address_street]]" name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Luisenstr. 45">
+                          <input disabled :value="[[address_street]]" name="address_street" type="text" class="form-control" id="form-address-street">
                           <label for="form-address-code">Postleitzahl</label>
-                          <input disabled :value="[[address_code]]" name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="PLZ">
+                          <input disabled :value="[[address_code]]" name="address_code" type="number" class="no-spinner form-control" id="form-address-code">
                           <label for="form-address-city">Stadt</label>
-                          <input disabled :value="[[address_city]]" name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt">
+                          <input disabled :value="[[address_city]]" name="address_city" type="text" class="form-control" id="form-address-city">
                       </div>  
                       <!-- Slow Food Mitglied -->
                       <div class="form-check">
@@ -67,7 +67,7 @@
                       <!-- freie Nachricht -->
                       <div class="form-group">
                           <label for="form-additional">Eine Nachricht an uns</label>
-                          <textarea disabled :value="[[msg]]" name="message" class="form-control" id="form-additional" rows="5" placeholder="Schicken Sie uns hier eine persönliche Nachricht! Von Feedback zur Anfrage des Versands außerhalb Deutschlands."></textarea>
+                          <textarea disabled :value="[[msg]]" name="message" class="form-control" id="form-additional" rows="5" placeholder=""></textarea>
                       </div>
                       <hr>
                       <!-- Bezahlmethode -->
