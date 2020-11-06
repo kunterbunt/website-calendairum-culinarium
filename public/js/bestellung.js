@@ -88,7 +88,11 @@ var app = new Vue({
             }
             var price_before_discount = this.amount * this.price
             var price_after_discount = price_before_discount * (1-discount)
-            return price_after_discount + (discount > 0 ? " (" + (discount*100) + "% Rabatt!)" : "")
+            if (isNaN(price_after_discount)) {
+                return "Bitte Menge auswählen!"
+            } else {
+                return price_after_discount + (discount > 0 ? " (" + (discount*100) + "% Rabatt!)" : "")
+            }
         }     
     },
     mounted() {
