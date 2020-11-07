@@ -8,8 +8,8 @@ body {
 }
 
 #fixed {
-    height: 70vh;
-    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url("/theme-imgs/calendarium.jpg") no-repeat center center fixed;
+    height: calc(100vh - 72px);
+    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75) ), url("/theme-imgs/calendarium.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -18,7 +18,11 @@ body {
 }
 
 #fixed-container {
-    padding: 0;
+    padding: 0;    
+}
+
+#kitchen-img {
+    height: 80vh;
 }
 
 #description .row, p {
