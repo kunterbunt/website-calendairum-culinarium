@@ -1,7 +1,7 @@
 <!-- Anzahl -->
 <div class="form-group">
     <label for="form-amount">Anzahl</label>
-    <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number" {{ if in (print .URL) "bestellung" }} disabled {{ end }}>
+    <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number" {{ if in (print .Params.url) "bestellung" }} disabled {{ end }}>
 </div>
 <!-- Preis -->
 <div class="form-group">
@@ -13,20 +13,20 @@
 <!-- Name & Email -->
 <div class="form-group">
     <label for="form-name">Kontakt</label>
-    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname" {{ if in (print .URL) "bestellung" }} disabled :value="[[name]]" {{ end }}>
-    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" {{ if in (print .URL) "bestellung" }} disabled :value="[[email]]" {{ end }}>
+    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname" {{ if in (print .Params.url) "bestellung" }} disabled :value="[[name]]" {{ end }}>
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" {{ if in (print .Params.url) "bestellung" }} disabled :value="[[email]]" {{ end }}>
 </div>                                                                
 <hr>
 <!-- Adresse -->
 <div class="form-group">
     <label for="form-address-street">Lieferadresse</label>
-    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr." {{ if in (print .URL) "bestellung" }} disabled :value="[[address_street]]" {{ end }}>
-    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl" {{ if in (print .URL) "bestellung" }} disabled :value="[[address_code]]" {{ end }}>
-    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt" {{ if in (print .URL) "bestellung" }} disabled :value="[[address_city]]" {{ end }}>
+    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr." {{ if in (print .Params.url) "bestellung" }} disabled :value="[[address_street]]" {{ end }}>
+    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl" {{ if in (print .Params.url) "bestellung" }} disabled :value="[[address_code]]" {{ end }}>
+    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt" {{ if in (print .Params.url) "bestellung" }} disabled :value="[[address_city]]" {{ end }}>
 </div>  
 <!-- Slow Food Mitglied -->
 <div class="form-check">
-    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check" {{ if in (print .URL) "bestellung" }} disabled :checked="[[sf_member]]" {{ end }}>                            
+    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check" {{ if in (print .Params.url) "bestellung" }} disabled :checked="[[sf_member]]" {{ end }}>                            
     <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
     <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
 </div>
@@ -34,5 +34,5 @@
 <!-- freie Nachricht -->
 <div class="form-group">
     <label for="form-additional">Eine Nachricht an uns</label>
-    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" {{ if in (print .URL) "bestellung" }} disabled :value="[[msg]]" {{ end }}></textarea>
+    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" {{ if in (print .Params.url) "bestellung" }} disabled :value="[[msg]]" {{ end }}></textarea>
 </div>
