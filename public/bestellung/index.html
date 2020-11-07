@@ -45,7 +45,7 @@
                     
 <div class="form-group">
     <label for="form-amount">Anzahl</label>
-    <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number" >
+    <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number"  disabled >
 </div>
 
 <div class="form-group">
@@ -57,20 +57,20 @@
 
 <div class="form-group">
     <label for="form-name">Kontakt</label>
-    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname" >
-    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" >
+    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname"  disabled :value="[[name]]" >
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse"  disabled :value="[[email]]" >
 </div>                                                                
 <hr>
 
 <div class="form-group">
     <label for="form-address-street">Lieferadresse</label>
-    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr." >
-    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl" >
-    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt" >
+    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr."  disabled :value="[[address_street]]" >
+    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl"  disabled :value="[[address_code]]" >
+    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt"  disabled :value="[[address_city]]" >
 </div>  
 
 <div class="form-check">
-    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check" >                            
+    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check"  disabled :checked="[[sf_member]]" >                            
     <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
     <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
 </div>
@@ -78,7 +78,7 @@
 
 <div class="form-group">
     <label for="form-additional">Eine Nachricht an uns</label>
-    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" ></textarea>
+    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!"  disabled :value="[[msg]]" ></textarea>
 </div>                    
                   </form>
                   <div class="submit-button-container center-text">
