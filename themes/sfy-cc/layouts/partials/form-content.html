@@ -13,7 +13,7 @@
 <!-- Name & Email -->
 <div class="form-group">
     <label for="form-name">Kontakt</label>
-    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname" {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[name]]" {{ end }}>
+    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- & Nachname" {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[name]]" {{ end }}>
     <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[email]]" {{ end }}>
 </div>                                                                
 <hr>

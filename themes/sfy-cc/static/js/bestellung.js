@@ -67,9 +67,9 @@ var app = new Vue({
                 $("#server-response").text("Entschuldigen Sie! Das passiert, wenn man alles selber baut... könnten Sie bitte diesen Fehler melden, und dabei die Fehlermeldung und eine möglichst genaue Beschreibung, welche Schritte zu diesem Fehler geführt haben beifügen? Vielen Dank!")
                 $("#server-response-2").text(error)
                 $("#server-response-3").text(error.response.data)
-                $("#server-response-4").text("(falls selbst der Button nicht möchte: schicken Sie bitte eine Mail an sebastian(at)slowfoodyouthh.de! Danke!")
+                $("#server-response-4").text("(falls selbst der Button nicht möchte: schicken Sie bitte eine Mail an diesdas(at)calendariumculinarium.de! Danke!")
                 var email_body = "Guten Tag,%0D%0A%0D%0Ameine Bestellung konnte leider nicht aufgegeben werden.%0D%0A%0D%0AFehlercode: " + error + "%0D%0A Fehlermeldung: " + error.response.data + "%0D%0A%0D%0AMein Vorgehen: "
-                $("#problem-button").attr("href", "mailto:sebastian@slowfoodyouthh.de?subject=Fehler%20bei%20einer%20Kalenderbestellung&body=" + email_body)
+                $("#problem-button").attr("href", "mailto:diesdas@calendariumculinarium.de?subject=Fehler%20bei%20einer%20Kalenderbestellung&body=" + email_body)
             })
         },
         backButtonClicked() {
