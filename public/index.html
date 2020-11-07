@@ -12,25 +12,16 @@
 <script src="https://calendariumculinarium.de/bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>    
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://calendariumculinarium.de/css/style.css">    
-
+<link href="https://calendariumculinarium.de/fontawesome/css/all.css" rel="stylesheet">
   </head>
   <body>
       <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">calendarium culinarium</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
+          <div class="navbar">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#description">was?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#features">wie?</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#kaufen">kaufen!</a>
+                <a class="nav-link" href="/bestellen"><i class="fas fa-shopping-cart"></i></a>
               </li>
             </ul>
           </div>          
@@ -50,6 +41,9 @@
                 <img src="theme-imgs/slow_food_logo.png" class="img-fluid" style="height: 128px;">
               </div>
               <div style="height: 4em;"></div>
+              <div>
+                <i class="fas fa-chevron-down" style="font-size: xx-large;"></i>
+              </div>              
             </div>
           </div>          
         </div>
@@ -59,7 +53,6 @@
       <div id="description" class="container-fluid">
         <div class="row jumbotron">
           <div class="col-12 text-center">
-            <h1>Was?</h1>
             <h4>Das Calendarium Culinarium ist ein Saisonkalender, der schön und informativ ist und gleichzeitig Gutes tut.</h4>
           </div>          
         </div>
@@ -84,9 +77,6 @@
       
       <div class="container-fluid">
         <div id="features" class="row jumbotron text-center">
-          <div class="col-12">
-            <h1>Wie?</h1>
-          </div>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <p class="lead">BLICKFANG</p>
             <p>ein absoluter Hingucker</p>
@@ -129,8 +119,10 @@
           <div class="col-12" style="height: 4em;"></div>
           <div class="col-12">
             <h2>Ich möchte einen haben!</h2>
-            <p>Prima! Bis Ende November nehmen wir nur Vorbestellungen an.</p>
-            <p>Anfang Dezember startet dann der Versand.</p>
+            <div class="card-body text-center">
+    <p>Bis Ende November nehmen wir nur Vorbestellungen an.</p>
+    <p>Anfang Dezember startet dann der Versand.</p>
+</div>
             <p style="height: 2em;"></p>
           </div>
           <div class="col-xs-12 col-md-8 col-xl-4 mx-auto">
@@ -139,36 +131,36 @@
                 <tr>
                   <th scope="col">Bestellmenge</th>  
                   <th scope="col">Rabatt</th>                
-                  <th scope="col">€ pro Kalender</th>                  
+                  <th scope="col">pro Kalender</th>                  
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1-2</th>                  
                   <td>0%</td>
-                  <td>20</td>                  
+                  <td>20€</td>                  
                 </tr>
                 <tr>
                   <th scope="row">ab 3</th>                  
                   <td>10%</td>
-                  <td>18</td>                  
+                  <td>18€</td>                  
                 </tr>
                 <tr>
                   <th scope="row">ab 5</th>                  
                   <td>15%</td>
-                  <td>17</td>                  
+                  <td>17€</td>                  
                 </tr>   
                 <tr>
                   <th scope="row">ab 50</th>                  
                   <td>20%</td>
-                  <td>16</td>                  
+                  <td>16€</td>                  
                 </tr>                
               </tbody>
             </table>
             <p style="height: 2em;"></p>
           </div>
           <div class="col-12">
-            <a href="bestellen" class="btn btn-outline-light btn-lg btn-primary">Zum Bestellformular</a>
+            <a href="bestellen" class="btn btn-outline-dark btn-lg">Zum Bestellformular</a>
           </div>          
           <div class="col-12" style="height: 4em;"></div>
         </div>

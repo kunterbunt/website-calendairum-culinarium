@@ -11,7 +11,7 @@
 <script src="https://calendariumculinarium.de/bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>    
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://calendariumculinarium.de/css/style.css">    
-
+<link href="https://calendariumculinarium.de/fontawesome/css/all.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>    
   </head>
   <body>
@@ -30,67 +30,58 @@
 
       
       <div class="container-fluid">
-          <div class="row col-12">
-            <div id="order" class="card mx-auto">                
+          <div class="row">
+            <div id="order" class="card col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">                
                 <div class="card-body text-center">
                   <h5 class="card-title">Bestellformular</h5>                  
                 </div>
                 <div class="card-body text-center">
-                  <p>Bis Ende November nehmen wir nur Vorbestellungen an.</p>
-                  <p>Anfang Dezember startet dann der Versand.</p>
-                </div>
+    <p>Bis Ende November nehmen wir nur Vorbestellungen an.</p>
+    <p>Anfang Dezember startet dann der Versand.</p>
+</div>
                 <div class="card-body">
-                    <form action="/bestellung">
+                    <form action="/bestellung">                                                                    
                         
-                        <div class="form-group">
-                            <label for="form-amount">Anzahl</label>
-                            <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number">
-                        </div>
-                        
-                        <div class="form-group">
-                          <label for="form-amount">Preis in Euro</label>
-                          <input readonly style="pointer-events: none;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
-                          <p><strong>Banküberweisung</strong> geht!</p>
-                          <p><strong>PayPal</strong> geht!</p>
-                          <p>Hinweise mit der Bestellbestätigung.</p>
-                      </div>                        
-                        <hr>
-                        
-                        <div class="form-group">
-                            <label for="form-name">Vor- und Nachname</label>
-                            <input required name="name" type="text" class="form-control" id="form-name" placeholder="Wird als Adressat verwendet">
-                            <label for="form-email">Emailadresse</label>
-                            <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse hier eingeben">
-                            <small id="emailHelp" class="form-text text-muted">Wir geben Ihre Emailadresse an niemanden weiter.</small>
-                        </div>                                                                
-                        <hr>
-                        
-                        <div class="form-group">
-                            <label for="form-address-street">Straße und Hausnr.</label>
-                            <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Luisenstr. 45">
-                            <label for="form-address-code">Postleitzahl</label>
-                            <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="PLZ">
-                            <label for="form-address-city">Stadt</label>
-                            <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt">
-                        </div>  
-                        
-                        <div class="form-check">
-                            <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check">                            
-                            <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
-                            <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
-                        </div>
-                        <hr>
-                        
-                        <div class="form-group">
-                            <label for="form-additional">Eine Nachricht an uns</label>
-                            <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!"></textarea>
-                        </div>
-                        <hr>
-                        
-                        
+<div class="form-group">
+    <label for="form-amount">Anzahl</label>
+    <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number" >
+</div>
+
+<div class="form-group">
+<label for="form-amount">Preis in Euro</label>
+<input readonly style="pointer-events: none; margin-bottom: 1em;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
+<p>Wir bieten ausschließlich Vorauskasse per Überweisung und Paypal an. Die entsprechenden Zahlungsdetails erhältst Du in deiner Bestellbestätigung. Nach Geldeingang auf unserem Konto bringen wir deine Kalender zur Post.</p>
+</div>   
+<hr>
+
+<div class="form-group">
+    <label for="form-name">Kontakt</label>
+    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname" >
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" >
+</div>                                                                
+<hr>
+
+<div class="form-group">
+    <label for="form-address-street">Lieferadresse</label>
+    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr." >
+    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl" >
+    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt" >
+</div>  
+
+<div class="form-check">
+    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check" >                            
+    <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
+    <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
+</div>
+<hr>
+
+<div class="form-group">
+    <label for="form-additional">Eine Nachricht an uns</label>
+    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" ></textarea>
+</div>                                                
                         <div class="submit-button-container center-text">
                             <p style="margin: 2em 0; font-weight: bold;">Bis wir alles Rechtliche klären konnten, ist der Bestellvorgang deaktiviert.</p>
-                            <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-primary btn-lg btn-outline-light">Weiter</button>                            
+                            <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
                         </div>                    
                     </form>
                 </div>

@@ -13,11 +13,12 @@
 
       <!-- Ordering form. -->
       <div class="container-fluid">
-        <div class="row col-12">          
-          <div id="order" class="card mx-auto">                          
+        <div class="row">          
+          <div id="order" class="card col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">                          
               <div class="card-body text-center">
                 <h5 id="order-title" class="card-title">Bestellung überprüfen</h5>                
               </div>
+              {{ partial "note_preorder.html" . }}
               <div id="loader-container" class="hide center-text">
                 <div id="loader" class="loader"></div>
                 <p id="server-response"></p>
@@ -26,70 +27,13 @@
                 <a id="problem-button" class="btn btn-primary btn-lg btn-outline-light" href="mailto:sebastian@slowfoodyouthh.de?subject=Fehler%20bei%20einer%20Kalenderbestellung">Problem melden</a>
                 <p id="server-response-4"></p>
               </div>
-              <div id="order-form" class="card-body">                  
+              <div id="order-form" class="card-body">                                                         
                   <form>
-                      <!-- Anzahl -->
-                      <div class="form-group">
-                          <label for="form-amount">Anzahl</label>
-                          <input disabled :value="[[amount]]" id="form-amount" name="amount" class="form-control" min="1" type="number">
-                      </div>
-                      <!-- Preis -->
-                      <div class="form-group">
-                        <label for="form-amount">Preis in Euro</label>
-                        <input readonly style="pointer-events: none;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
-                        <p><strong>Banküberweisung</strong> geht!</p>
-                        <p><strong>PayPal</strong> geht!</p>
-                        <p>Hinweise mit der Bestellbestätigung.</p>
-                    </div>                        
-                      <hr>
-                      <!-- Name & Email -->
-                      <div class="form-group">
-                          <label for="form-name">Vor- und Nachname</label>
-                          <input disabled :value="[[name]]" name="name" type="text" class="form-control" id="form-name" >
-                          <label for="form-email">Emailadresse</label>
-                          <input disabled :value="[[email]]" name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp">
-                          <small id="emailHelp" class="form-text text-muted">Wir geben Ihre Emailadresse an niemanden weiter.</small>
-                      </div>                                                                
-                      <hr>
-                      <!-- Adresse -->
-                      <div class="form-group">
-                          <label for="form-address-street">Straße und Hausnr.</label>
-                          <input disabled :value="[[address_street]]" name="address_street" type="text" class="form-control" id="form-address-street">
-                          <label for="form-address-code">Postleitzahl</label>
-                          <input disabled :value="[[address_code]]" name="address_code" type="number" class="no-spinner form-control" id="form-address-code">
-                          <label for="form-address-city">Stadt</label>
-                          <input disabled :value="[[address_city]]" name="address_city" type="text" class="form-control" id="form-address-city">
-                      </div>  
-                      <!-- Slow Food Mitglied -->
-                      <div class="form-check">
-                          <input disabled :checked="[[sf_member]]" name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check">                            
-                          <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
-                          <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
-                      </div>
-                      <hr>
-                      <!-- freie Nachricht -->
-                      <div class="form-group">
-                          <label for="form-additional">Eine Nachricht an uns</label>
-                          <textarea disabled :value="[[msg]]" name="message" class="form-control" id="form-additional" rows="5" placeholder=""></textarea>
-                      </div>
-                      <hr>
-                      <!-- Bezahlmethode -->
-                      <!-- <div class="form-check">
-                          <input class="form-check-input" type="radio" name="bestellmethoden" id="pay-rechnung" value="option1" checked>
-                          <label class="form-check-label" for="pay-rechnung">
-                          auf Rechnung
-                          </label>
-                      </div>                    
-                      <div class="form-check">
-                          <input class="form-check-input" type="radio" name="bestellmethoden" id="pay-paypal" value="option2" disabled>
-                          <label class="form-check-label" for="pay-paypal">
-                          über PayPal (kommt bald)
-                          </label>
-                      </div> -->                      
+                    {{ partial "form-content.html" . }}                    
                   </form>
                   <div class="submit-button-container center-text">
-                    <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-lg btn-outline-dark">Zurück</button>
-                    <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-primary btn-lg btn-outline-light">Bestellen!</button>
+                    <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-outline-dark">Zurück</button>
+                    <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
                   </div>                    
               </div>
           </div>

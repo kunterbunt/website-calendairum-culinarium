@@ -11,7 +11,7 @@
 <script src="https://calendariumculinarium.de/bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>    
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" href="https://calendariumculinarium.de/css/style.css">    
-
+<link href="https://calendariumculinarium.de/fontawesome/css/all.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>    
   </head>
   <body>
@@ -23,11 +23,15 @@
 
       
       <div class="container-fluid">
-        <div class="row col-12">          
-          <div id="order" class="card mx-auto">                          
+        <div class="row">          
+          <div id="order" class="card col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">                          
               <div class="card-body text-center">
                 <h5 id="order-title" class="card-title">Bestellung überprüfen</h5>                
               </div>
+              <div class="card-body text-center">
+    <p>Bis Ende November nehmen wir nur Vorbestellungen an.</p>
+    <p>Anfang Dezember startet dann der Versand.</p>
+</div>
               <div id="loader-container" class="hide center-text">
                 <div id="loader" class="loader"></div>
                 <p id="server-response"></p>
@@ -36,59 +40,50 @@
                 <a id="problem-button" class="btn btn-primary btn-lg btn-outline-light" href="mailto:sebastian@slowfoodyouthh.de?subject=Fehler%20bei%20einer%20Kalenderbestellung">Problem melden</a>
                 <p id="server-response-4"></p>
               </div>
-              <div id="order-form" class="card-body">                  
+              <div id="order-form" class="card-body">                                                         
                   <form>
-                      
-                      <div class="form-group">
-                          <label for="form-amount">Anzahl</label>
-                          <input disabled :value="[[amount]]" id="form-amount" name="amount" class="form-control" min="1" type="number">
-                      </div>
-                      
-                      <div class="form-group">
-                        <label for="form-amount">Preis in Euro</label>
-                        <input readonly style="pointer-events: none;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
-                        <p><strong>Banküberweisung</strong> geht!</p>
-                        <p><strong>PayPal</strong> geht!</p>
-                        <p>Hinweise mit der Bestellbestätigung.</p>
-                    </div>                        
-                      <hr>
-                      
-                      <div class="form-group">
-                          <label for="form-name">Vor- und Nachname</label>
-                          <input disabled :value="[[name]]" name="name" type="text" class="form-control" id="form-name" >
-                          <label for="form-email">Emailadresse</label>
-                          <input disabled :value="[[email]]" name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp">
-                          <small id="emailHelp" class="form-text text-muted">Wir geben Ihre Emailadresse an niemanden weiter.</small>
-                      </div>                                                                
-                      <hr>
-                      
-                      <div class="form-group">
-                          <label for="form-address-street">Straße und Hausnr.</label>
-                          <input disabled :value="[[address_street]]" name="address_street" type="text" class="form-control" id="form-address-street">
-                          <label for="form-address-code">Postleitzahl</label>
-                          <input disabled :value="[[address_code]]" name="address_code" type="number" class="no-spinner form-control" id="form-address-code">
-                          <label for="form-address-city">Stadt</label>
-                          <input disabled :value="[[address_city]]" name="address_city" type="text" class="form-control" id="form-address-city">
-                      </div>  
-                      
-                      <div class="form-check">
-                          <input disabled :checked="[[sf_member]]" name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check">                            
-                          <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
-                          <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
-                      </div>
-                      <hr>
-                      
-                      <div class="form-group">
-                          <label for="form-additional">Eine Nachricht an uns</label>
-                          <textarea disabled :value="[[msg]]" name="message" class="form-control" id="form-additional" rows="5" placeholder=""></textarea>
-                      </div>
-                      <hr>
-                      
-                                            
+                    
+<div class="form-group">
+    <label for="form-amount">Anzahl</label>
+    <input required v-model="amount" id="form-amount" name="amount" class="form-control" min="1" value="1" type="number"  disabled >
+</div>
+
+<div class="form-group">
+<label for="form-amount">Preis in Euro</label>
+<input readonly style="pointer-events: none; margin-bottom: 1em;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
+<p>Wir bieten ausschließlich Vorauskasse per Überweisung und Paypal an. Die entsprechenden Zahlungsdetails erhältst Du in deiner Bestellbestätigung. Nach Geldeingang auf unserem Konto bringen wir deine Kalender zur Post.</p>
+</div>   
+<hr>
+
+<div class="form-group">
+    <label for="form-name">Kontakt</label>
+    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- und Nachname"  disabled :value="[[name]]" >
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse"  disabled :value="[[email]]" >
+</div>                                                                
+<hr>
+
+<div class="form-group">
+    <label for="form-address-street">Lieferadresse</label>
+    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr."  disabled :value="[[address_street]]" >
+    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl"  disabled :value="[[address_code]]" >
+    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt"  disabled :value="[[address_city]]" >
+</div>  
+
+<div class="form-check">
+    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check"  disabled :checked="[[sf_member]]" >                            
+    <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
+    <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
+</div>
+<hr>
+
+<div class="form-group">
+    <label for="form-additional">Eine Nachricht an uns</label>
+    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!"  disabled :value="[[msg]]" ></textarea>
+</div>                    
                   </form>
                   <div class="submit-button-container center-text">
-                    <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-lg btn-outline-dark">Zurück</button>
-                    <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-primary btn-lg btn-outline-light">Bestellen!</button>
+                    <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-outline-dark">Zurück</button>
+                    <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
                   </div>                    
               </div>
           </div>

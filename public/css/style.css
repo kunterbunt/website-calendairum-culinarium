@@ -109,7 +109,6 @@ input.no-spinner[type=number] {
 
 #order {
     margin: 2em 0;
-    max-width: 30rem;
 }
 
 .loader {
@@ -152,4 +151,8 @@ input.no-spinner[type=number] {
 
 #server-response-4 { 
     margin-bottom: 16px;
+}
+
+.form-control {
+    margin-bottom: 1em;
 }
