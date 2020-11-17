@@ -52,7 +52,7 @@ var app = new Vue({
                 return false
             }
             if (!this.agrees_agbs) {
-                window.alert("Du musst den AGBs zustimmen, um fortzufahren.")
+                window.alert("Du musst den AGB zustimmen, um fortzufahren.")
                 return false
             }
             if (!this.agrees_data_privacy) {
