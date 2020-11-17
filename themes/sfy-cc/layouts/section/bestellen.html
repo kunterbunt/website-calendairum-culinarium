@@ -15,12 +15,11 @@
                   <h5 class="card-title">Bestellformular</h5>                  
                 </div>
                 {{ partial "note_preorder.html" . }}
-                <div class="card-body">
+                <div id="order-form" class="card-body">
                     <form action="/bestellung">                                                                    
                         {{ partial "form-content.html" . }}                                                
-                        <div class="submit-button-container center-text">
-                            <p style="margin: 2em 0; font-weight: bold;">Bis wir alles Rechtliche klären konnten, ist der Bestellvorgang deaktiviert.</p>
-                            <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
+                        <div class="submit-button-container center-text">                            
+                            <button v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
                         </div>                    
                     </form>
                 </div>

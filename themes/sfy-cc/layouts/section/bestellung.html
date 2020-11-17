@@ -29,11 +29,22 @@
               </div>
               <div id="order-form" class="card-body">                                                         
                   <form>
-                    {{ partial "form-content.html" . }}                    
+                    {{ partial "form-content.html" . }} 
+                    <hr>                    
+                    <!-- AGBs -->
+                    <div class="form-check" style="margin-bottom: 0.5em;">
+                      <input v-model="agrees_agbs" name="agbs" type="checkbox" class="form-check-input" id="agb-check" required>                            
+                      <label class="form-check-label" for="agb-check">Ich habe die <a href="/agb" target="_blank" rel="noopener noreferrer">AGBs</a> gelesen und akzeptiere sie.</label>                      
+                    </div>
+                    <!-- Datenschutz -->
+                    <div class="form-check" style="margin-bottom: 2em;">
+                      <input v-model="agrees_data_privacy" name="datenschutz" type="checkbox" class="form-check-input" id="datenschutz-check" required>                            
+                      <label class="form-check-label" for="datenschutz-check">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> gelesen und akzeptiere sie.</label>                      
+                    </div>                                        
                   </form>
                   <div class="submit-button-container center-text">
                     <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-outline-dark">Zurück</button>
-                    <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
+                    <button v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
                   </div>                    
               </div>
           </div>

@@ -46,11 +46,15 @@ var app = new Vue({
         this.amount = parseInt(getUrlParameter('amount'))
         $("#form-amount").val(this.amount)
         $("#form-name").val(getUrlParameter('name'))
-        $("#form-email").val(getUrlParameter('email'))
+        $("#form-email").val(getUrlParameter('email'))        
+        $("#payment-banktransfer").prop('checked', getUrlParameter('payment') != "paypal")
+        $("#payment-paypal").prop('checked', getUrlParameter('payment') == "paypal")
         $("#form-address-street").val(getUrlParameter('address_street'))
+        $("#form-address-street-no").val(getUrlParameter('address_street_no'))
         $("#form-address-code").val(getUrlParameter('address_code'))
         $("#form-address-city").val(getUrlParameter('address_city'))
         $("#slow-food-member-check").prop('checked', getUrlParameter('slow_food_member') == 'on' ? true : false)
+        $("#reseller-check").prop('checked', getUrlParameter('is_reseller') == 'on' ? true : false)        
         $("#form-additional").val(getUrlParameter('message').replace(/\+/g, ' '))
     }
 });

@@ -51,7 +51,19 @@
 <div class="form-group">
 <label for="form-amount">Preis in Euro</label>
 <input readonly style="pointer-events: none; margin-bottom: 1em;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
-<p><i class="fas fa-money-check"></i> <i class="fab fa-paypal"></i></p>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="payment-banktransfer" value="banktransfer" checked  disabled >
+    <label class="form-check-label" for="payment-banktransfer">
+      Überweisung <i class="fas fa-money-check"></i>
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="payment-paypal" value="paypal"  disabled >
+    <label class="form-check-label" for="payment-paypal">
+      PayPal <i class="fab fa-paypal"></i>
+    </label>
+</div>
 <p>Der Versand erfolgt nach Zahlung in Vorkasse per Überweisung oder via PayPal. Die entsprechenden Zahlungsdetails erhältst Du in Deiner Bestellbestätigung.</p>
 </div>   
 <hr>
@@ -65,13 +77,20 @@
 
 <div class="form-group">
     <label for="form-address-street">Lieferadresse</label>
-    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr."  disabled :value="[[address_street]]" >
+    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße"  disabled :value="[[address_street]]" >
+    <input required name="address_street_no" type="text" class="form-control" id="form-address-street-no" placeholder="Hausnr."  disabled :value="[[address_street_no]]" >
     <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl"  disabled :value="[[address_code]]" >
     <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt"  disabled :value="[[address_city]]" >
 </div>  
 
+<div class="form-check" style="margin-bottom: 0.5em;">
+    <input name="is_reseller" type="checkbox" class="form-check-input" id="reseller-check"  disabled >                            
+    <label class="form-check-label" for="reseller-check">Ich bin <a href="/agb/#weiterverkauf" target="_blank" rel="noopener noreferrer">Weiterverkäufer*in</a>.</label>                      
+</div>
+
+
 <div class="form-check">
-    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check"  disabled :checked="[[sf_member]]" >                            
+    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check"  disabled >                            
     <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
     <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
 </div>
@@ -80,11 +99,22 @@
 <div class="form-group">
     <label for="form-additional">Eine Nachricht an uns</label>
     <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!"  disabled :value="[[msg]]" ></textarea>
-</div>                    
+</div> 
+                    <hr>                    
+                    
+                    <div class="form-check" style="margin-bottom: 0.5em;">
+                      <input v-model="agrees_agbs" name="agbs" type="checkbox" class="form-check-input" id="agb-check" required>                            
+                      <label class="form-check-label" for="agb-check">Ich habe die <a href="/agb" target="_blank" rel="noopener noreferrer">AGBs</a> gelesen und akzeptiere sie.</label>                      
+                    </div>
+                    
+                    <div class="form-check" style="margin-bottom: 2em;">
+                      <input v-model="agrees_data_privacy" name="datenschutz" type="checkbox" class="form-check-input" id="datenschutz-check" required>                            
+                      <label class="form-check-label" for="datenschutz-check">Ich habe die <a href="/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzerklärung</a> gelesen und akzeptiere sie.</label>                      
+                    </div>                                        
                   </form>
                   <div class="submit-button-container center-text">
                     <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-outline-dark">Zurück</button>
-                    <button disabled v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
+                    <button v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
                   </div>                    
               </div>
           </div>

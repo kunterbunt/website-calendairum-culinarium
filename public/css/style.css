@@ -173,11 +173,11 @@ input.no-spinner[type=number] {
     margin-bottom: 0 !important;
 }
 
-#agbs a, #datenschutz a, #impressum a {
+#order-form a, #agbs a, #datenschutz a, #impressum a {
     color: #343a40;
     text-decoration: underline;
 }
 
-#agbs a:hover, #datenschutz a:hover, #impressum a:hover {
+#order-form a:hover, #agbs a:hover, #datenschutz a:hover, #impressum a:hover {
     color: black;
 }

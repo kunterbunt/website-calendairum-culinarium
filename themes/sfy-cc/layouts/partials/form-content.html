@@ -7,7 +7,20 @@
 <div class="form-group">
 <label for="form-amount">Preis in Euro</label>
 <input readonly style="pointer-events: none; margin-bottom: 1em;" min="1" class="form-control" id="form-price" :value="[[ computeCurrentPrice() ]]"></input>
-{{ partial "note_payment.html" . }}
+<!-- Bezahlform -->
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="payment-banktransfer" value="banktransfer" checked {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <label class="form-check-label" for="payment-banktransfer">
+      Überweisung <i class="fas fa-money-check"></i>
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="payment-paypal" value="paypal" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <label class="form-check-label" for="payment-paypal">
+      PayPal <i class="fab fa-paypal"></i>
+    </label>
+</div>
+<p>Der Versand erfolgt nach Zahlung in Vorkasse per Überweisung oder via PayPal. Die entsprechenden Zahlungsdetails erhältst Du in Deiner Bestellbestätigung.</p>
 </div>   
 <hr>
 <!-- Name & Email -->
@@ -20,13 +33,20 @@
 <!-- Adresse -->
 <div class="form-group">
     <label for="form-address-street">Lieferadresse</label>
-    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße & Nr." {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[address_street]]" {{ end }}>
+    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße" {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[address_street]]" {{ end }}>
+    <input required name="address_street_no" type="text" class="form-control" id="form-address-street-no" placeholder="Hausnr." {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[address_street_no]]" {{ end }}>
     <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl" {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[address_code]]" {{ end }}>
     <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt" {{ if in (print .RelPermalink) "bestellung" }} disabled :value="[[address_city]]" {{ end }}>
 </div>  
+<!-- Reseller -->
+<div class="form-check" style="margin-bottom: 0.5em;">
+    <input name="is_reseller" type="checkbox" class="form-check-input" id="reseller-check" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>                            
+    <label class="form-check-label" for="reseller-check">Ich bin <a href="/agb/#weiterverkauf" target="_blank" rel="noopener noreferrer">Weiterverkäufer*in</a>.</label>                      
+</div>
+
 <!-- Slow Food Mitglied -->
 <div class="form-check">
-    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check" {{ if in (print .RelPermalink) "bestellung" }} disabled :checked="[[sf_member]]" {{ end }}>                            
+    <input name="slow_food_member" type="checkbox" class="form-check-input" id="slow-food-member-check" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>                            
     <label class="form-check-label" for="slow-food-member-check" aria-describedby="memberHelp">Ich bin Slow Food Mitglied</label>                            
     <small id="memberHelp" class="form-text text-muted">Nur für die Statistik</small>
 </div>
