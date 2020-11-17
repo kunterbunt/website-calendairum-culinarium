@@ -165,19 +165,19 @@ input.no-spinner[type=number] {
     margin-bottom: 1em;
 }
 
-#agbs p, #datenschutz p {
+#agbs p, #datenschutz p, #impressum p {
     margin-bottom: 1em;
 }
 
-#agbs .no-margin, #datenschutz .no-margin {
+#agbs .no-margin, #datenschutz .no-margin, #impressum .no-margin {
     margin-bottom: 0 !important;
 }
 
-#agbs a, #datenschutz a {
+#agbs a, #datenschutz a, #impressum a {
     color: #343a40;
     text-decoration: underline;
 }
 
-#agbs a:hover, #datenschutz a:hover {
+#agbs a:hover, #datenschutz a:hover, #impressum a:hover {
     color: black;
 }
