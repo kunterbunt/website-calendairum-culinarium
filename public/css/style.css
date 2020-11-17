@@ -38,13 +38,6 @@ body {
     margin-bottom: 0;
 }
 
-footer {
-    color: #dfdfdf;;
-    background-color: #272727;;
-    padding: 2em 0;
-    margin: 0;
-}
-
 a {
     color: white;
 }
@@ -54,13 +47,24 @@ a:hover {
     
 }
 
+footer {
+    color: #dfdfdf;
+    background-color: #272727;;
+    padding: 2em 0;
+    margin: 0;
+}
+
+footer hr {
+    border-top: 1px solid #dfdfdf;
+}
+
 footer a {
-    color: #dfdfdf;;
+    color: #dfdfdf;
     text-decoration: underline;
 }
 
 footer a:hover {
-    color: #dfdfdf;;
+    color: #999999;
 }
 
 footer p {
@@ -159,4 +163,16 @@ input.no-spinner[type=number] {
 
 .form-control {
     margin-bottom: 1em;
+}
+
+#agbs p {
+    margin-bottom: 1em;
+}
+
+#agbs .no-margin {
+    margin-bottom: 0 !important;
+}
+
+#agbs a {
+    color: black;
 }
