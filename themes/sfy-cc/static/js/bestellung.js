@@ -64,45 +64,48 @@ var app = new Vue({
         orderButtonClicked() {
             if (!this.validateInput()) {
                 return
-            }
-            window.alert("all good")
-            // $("#order-form").addClass('hide')
-            // $("#loader-container").removeClass('hide')
-            // $("#order-title").text("Übermittle Bestellung...")
-            // axios({
-            //     method: 'post',
-            //     url: 'https://calendariumculinarium.de/api/orders',
-            //     headers: {
-            //         'Content-Type': 'application/json; charset=utf-8'
-            //     },
-            //     data: {
-            //         "product_id": 1,
-            //         "amount": parseInt(this.amnt),
-            //         "name": this.name, 
-            //         "email": this.email, 
-            //         "address_street": this.address_street, 
-            //         "address_code": this.address_code, 
-            //         "address_city": this.address_city, 
-            //         "slow_food_member": this.sf_member, 
-            //         "message": this.msg
-            //     }
-            // }).then(function (response) {
-            //     // handle success
-            //     $("#loader").addClass('hide')
-            //     $("#server-response").text(response.data)
-            //     $("#problem-button").addClass('hide')
-            // })
-            // .catch(function (error) {
-            //     // handle error
-            //     $("#order-title").text("Fehler! :(")
-            //     $("#loader").addClass('hide')
-            //     $("#server-response").text("Entschuldigen Sie! Das passiert, wenn man alles selber baut... könnten Sie bitte diesen Fehler melden, und dabei die Fehlermeldung und eine möglichst genaue Beschreibung, welche Schritte zu diesem Fehler geführt haben beifügen? Vielen Dank!")
-            //     $("#server-response-2").text(error)
-            //     $("#server-response-3").text(error.response.data)
-            //     $("#server-response-4").text("(falls selbst der Button nicht möchte: schicken Sie bitte eine Mail an diesdas(at)calendariumculinarium.de! Danke!")
-            //     var email_body = "Guten Tag,%0D%0A%0D%0Ameine Bestellung konnte leider nicht aufgegeben werden.%0D%0A%0D%0AFehlercode: " + error + "%0D%0A Fehlermeldung: " + error.response.data + "%0D%0A%0D%0AMein Vorgehen: "
-            //     $("#problem-button").attr("href", "mailto:diesdas@calendariumculinarium.de?subject=Fehler%20bei%20einer%20Kalenderbestellung&body=" + email_body)
-            // })
+            }                        
+            $("#order-form").addClass('hide')
+            $("#loader-container").removeClass('hide')
+            $("#order-title").text("Übermittle Bestellung...")
+            axios({
+                method: 'post',                
+                url: 'https://calendariumculinarium.de/api/orders',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+                },
+                data: {
+                    "product_id": 1,
+                    "amount": parseInt(this.amount),
+                    "name": this.name, 
+                    "email": this.email, 
+                    "address_street": this.address_street, 
+                    "address_street_no": this.address_street_no, 
+                    "address_code": this.address_code, 
+                    "address_city": this.address_city, 
+                    "is_reseller": this.is_reseller, 
+                    "slow_food_member": this.sf_member, 
+                    "message": this.msg,
+                    "agrees_agb": this.agrees_agbs, 
+                    "agrees_data_privacy": this.agrees_data_privacy
+                }
+            }).then(function (response) {
+                // handle success
+                $("#loader").addClass('hide')
+                $("#server-response").text(response.data)
+                $("#problem-button").addClass('hide')
+            })
+            .catch(function (error) {
+                // handle error
+                $("#order-title").text("Fehler! :(")
+                $("#loader").addClass('hide')
+                $("#server-response").text("Entschuldigen Sie! Das passiert, wenn man alles selber baut... könnten Sie bitte diesen Fehler melden, und dabei die Fehlermeldung und eine möglichst genaue Beschreibung, welche Schritte zu diesem Fehler geführt haben beifügen? Vielen Dank!")
+                $("#server-response-2").text(error)
+                $("#server-response-3").text(error.response.data)
+                $("#server-response-4").text("(falls selbst der Button nicht möchte: schicken Sie bitte eine Mail an diesdas(at)calendariumculinarium.de! Danke!")
+                var email_body = "Guten Tag,%0D%0A%0D%0Ameine Bestellung konnte leider nicht aufgegeben werden.%0D%0A%0D%0AFehlercode: " + error + "%0D%0A Fehlermeldung: " + error.response.data + "%0D%0A%0D%0AMein Vorgehen: "
+                $("#problem-button").attr("href", "mailto:diesdas@calendariumculinarium.de?subject=Fehler%20bei%20einer%20Kalenderbestellung&body=" + email_body)
+            })
         },
         backButtonClicked() {
             window.location.href = "/bestellen" + window.location.search
@@ -128,7 +131,9 @@ var app = new Vue({
         }     
     },
     mounted() {
-        this.amount = parseInt(getUrlParameter('amount'))
+        amnt = parseInt(getUrlParameter('amount'))
+        this.amount = isNaN(amnt) ? 1 : amnt
+        console.log(this.amount)
         this.name = getUrlParameter('name').replace(/\+/g, ' ')        
         this.email = getUrlParameter('email')
         this.payment = getUrlParameter('payment')

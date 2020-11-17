@@ -43,7 +43,8 @@ var app = new Vue({
         }
     },
     mounted() {
-        this.amount = parseInt(getUrlParameter('amount'))
+        amnt = parseInt(getUrlParameter('amount'))
+        this.amount = isNaN(amnt) ? 1 : amnt        
         $("#form-amount").val(this.amount)
         $("#form-name").val(getUrlParameter('name'))
         $("#form-email").val(getUrlParameter('email'))        
