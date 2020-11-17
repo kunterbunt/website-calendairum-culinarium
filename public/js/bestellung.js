@@ -37,21 +37,21 @@ var app = new Vue({
     methods: {        
         validateInput() {
             if (this.amnt <= 0) {
-                window.alert("Na, wenigstens einen Kalender sollten Sie schon bestellen wollen!")
-                return false
-            }
-            if (!this.agrees_agbs) {
-                window.alert("Sie müssen den AGBs zustimmen, um fortzufahren.")
-                return false
-            }
-            if (!this.agrees_data_privacy) {
-                window.alert("Sie müssen der Datenschutzerklärung zustimmen, um fortzufahren.")
+                window.alert("Na, wenigstens einen Kalender solltest Du schon bestellen wollen!")
                 return false
             }
             if (!this.reg.test(this.email)) {
                 window.alert("Die Emailadresse ist nicht gültig!")
                 return false
             }
+            if (!this.agrees_agbs) {
+                window.alert("Du musst den AGBs zustimmen, um fortzufahren.")
+                return false
+            }
+            if (!this.agrees_data_privacy) {
+                window.alert("Du musst der Datenschutzerklärung zustimmen, um fortzufahren.")
+                return false
+            }            
             return true
         },
         orderButtonClicked() {
