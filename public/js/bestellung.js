@@ -32,7 +32,10 @@ var app = new Vue({
         agrees_agbs: false,
         agrees_data_privacy: false,
         payment: "banktransfer",
-        reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
+        reg_email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+        reg_plz_de: /^\d{5}$/,
+        reg_plz_at: /^\d{4}$/,
+
     },
     methods: {        
         validateInput() {
@@ -40,7 +43,11 @@ var app = new Vue({
                 window.alert("Na, wenigstens einen Kalender solltest Du schon bestellen wollen!")
                 return false
             }
-            if (!this.reg.test(this.email)) {
+            if (!this.reg_plz_de.test(this.address_code) && !this.reg_plz_at.test(this.address_code)) {
+                window.alert("Die Postleitzahl ist nicht gültig!")
+                return false
+            }
+            if (!this.reg_email.test(this.email)) {
                 window.alert("Die Emailadresse ist nicht gültig!")
                 return false
             }
