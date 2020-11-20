@@ -176,18 +176,19 @@ var app = new Vue({
         this.address_street_no_delivery = getUrlParameter('address_street_no_delivery').replace(/\+/g, ' ')
         this.address_code_delivery = getUrlParameter('address_code_delivery')
         this.address_city_delivery = getUrlParameter('address_city_delivery').replace(/\+/g, ' ')        
-        this.address_country_delivery = getUrlParameter('address_country_delivery').replace(/\+/g, ' ')        
-        if (this.address_country_delivery == "")
-            this.address_country_delivery = "Deutschland"
-        this.different_invoice_address = (getUrlParameter('different_invoice_address') == 'checked' || getUrlParameter('different_invoice_address') == 'on' || getUrlParameter('different_invoice_address') == 'true') ? true : false
-        // $("#different-invoice-check").prop('checked', this.different_invoice_address)        
+        country_delivery = getUrlParameter('address_country_delivery').replace(/\+/g, ' ')        
+        this.address_country_delivery = country_delivery == "" ? "Deutschland" : country_delivery        
+        this.different_invoice_address = (getUrlParameter('different_invoice_address') == 'checked' || getUrlParameter('different_invoice_address') == 'on' || getUrlParameter('different_invoice_address') == 'true') ? true : false        
+        $("#different-invoice-check").prop('checked', this.different_invoice_address)
+        if (this.different_invoice_address) {
+            $("#invoice-fields").collapse()
+        }
         this.address_street_invoice = getUrlParameter('address_street_invoice').replace(/\+/g, ' ')
         this.address_street_no_invoice = getUrlParameter('address_street_no_invoice').replace(/\+/g, ' ')
         this.address_code_invoice = getUrlParameter('address_code_invoice')
         this.address_city_invoice = getUrlParameter('address_city_invoice').replace(/\+/g, ' ')        
-        this.address_country_invoice = getUrlParameter('address_country_invoice').replace(/\+/g, ' ')        
-        if (this.address_country_invoice == "")
-            this.address_country_invoice = "Deutschland"
+        country_invoice = getUrlParameter('address_country_invoice').replace(/\+/g, ' ')
+        this.address_country_invoice = country_invoice == "" ? "Deutschland" : country_invoice
         this.sf_member = (getUrlParameter('slow_food_member') == 'checked' || getUrlParameter('slow_food_member') == 'on') ? true : false
         this.is_reseller = (getUrlParameter('is_reseller') == 'checked' || getUrlParameter('is_reseller') == 'on') ? true : false
         this.msg = getUrlParameter('message').replace(/\+/g, ' ')        

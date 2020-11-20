@@ -83,11 +83,12 @@
 <hr>
 
 <div class="form-check">
-    <input name="different_invoice_address" type="checkbox" class="form-check-input" id="different-invoice-check" :value="different_invoice_address" v-model="different_invoice_address"  disabled >                            
+    <input name="different_invoice_address" type="checkbox" class="form-check-input" id="different-invoice-check"  disabled  >                            
     <label class="form-check-label" for="different-invoice-check">abweichende Rechnungsadresse</label>                      
 </div>
 
-<div v-bind:class="(different_invoice_address ? 'form-group' : 'collapse form-group')" id="invoice-fields" style="margin-top: 0.5em;">
+
+<div class="form-group collapse" id="invoice-fields" style="margin-top: 0.5em;">
     <label for="form-name">Rechnungsadresse</label>
     <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]"  disabled >
     <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]"  disabled >    
