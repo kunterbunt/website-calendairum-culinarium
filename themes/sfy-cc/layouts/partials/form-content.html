@@ -45,13 +45,13 @@
 <!-- <div v-bind:class="(different_invoice_address ? 'form-group' : 'collapse form-group')" id="invoice-fields" style="margin-top: 0.5em;"> -->
 <div class="form-group collapse" id="invoice-fields" style="margin-top: 0.5em;">
     <label for="form-name">Rechnungsadresse</label>
-    <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>    
-    <input required name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>    
+    <input name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
 </div>                                                                
 <hr>
 <!-- Reseller -->

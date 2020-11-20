@@ -88,13 +88,13 @@
 
 <div class="form-group collapse" id="invoice-fields" style="margin-top: 0.5em;">
     <label for="form-name">Rechnungsadresse</label>
-    <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" >
-    <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" >    
-    <input required name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" >
-    <input required name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" >
-    <input required name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" >
-    <input required name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" >
-    <input required name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" >
+    <input name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" >
+    <input name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" >    
+    <input name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" >
+    <input name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" >
+    <input name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" >
+    <input name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" >
+    <input name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" >
 </div>                                                                
 <hr>
 
@@ -117,7 +117,7 @@
     <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" :value="[[msg]]" ></textarea>
 </div>                                                
                         <div class="submit-button-container center-text">                            
-                            <button id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
+                            <button type="submit" id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
                         </div>                    
                     </form>
                 </div>

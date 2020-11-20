@@ -162,8 +162,7 @@ var app = new Vue({
     },
     mounted() {
         amnt = parseInt(getUrlParameter('amount'))
-        this.amount = isNaN(amnt) ? 1 : amnt
-        console.log(this.amount)
+        this.amount = isNaN(amnt) ? 1 : amnt        
         this.firstname_delivery = getUrlParameter('firstname_delivery').replace(/\+/g, ' ')        
         this.lastname_delivery = getUrlParameter('lastname_delivery').replace(/\+/g, ' ')                
         this.firstname_invoice = getUrlParameter('firstname_invoice').replace(/\+/g, ' ')        
