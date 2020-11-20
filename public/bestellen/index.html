@@ -85,7 +85,7 @@
     <label class="form-check-label" for="different-invoice-check">abweichende Rechnungsadresse</label>                      
 </div>
 
-<div class="form-group" v-bind:class="(different_invoice_address ? '' : 'collapse')" id="invoice-fields" style="margin-top: 0.5em;">
+<div v-bind:class="(different_invoice_address ? 'form-group' : 'collapse form-group')" id="invoice-fields" style="margin-top: 0.5em;">
     <label for="form-name">Rechnungsadresse</label>
     <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" >
     <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" >    
