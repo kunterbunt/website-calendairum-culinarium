@@ -19,7 +19,7 @@
                     <form action="/bestellung">                                                                    
                         {{ partial "form-content.html" . }}                                                
                         <div class="submit-button-container center-text">                            
-                            <button v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
+                            <button id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
                         </div>                    
                     </form>
                 </div>
@@ -28,6 +28,6 @@
     </div>
   
     <script src="{{ `js/vue-2.6.12.js` | absURL }}"></script>    
-    <script src="{{ `js/bestellen.js` | absURL }}"></script>    
+    <script src="{{ `js/bestellung.js` | absURL }}"></script>    
     </body>
 </html>

@@ -18,6 +18,7 @@
       <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">calendarium culinarium</a>
+          <a id="problem-button" class="btn btn-outline-dark" href="mailto:hallo@calendariumculinarium?subject=Fehler%20bei%20einer%20Kalenderbestellung">Problem melden</a>
         </div>
       </nav>
 
@@ -37,7 +38,7 @@
                 <p id="server-response"></p>
                 <p id="server-response-2"></p>
                 <p id="server-response-3"></p>                
-                <a id="problem-button" class="btn btn-primary btn-lg btn-outline-light" href="mailto:sebastian@slowfoodyouthh.de?subject=Fehler%20bei%20einer%20Kalenderbestellung">Problem melden</a>
+                <a id="problem-button" class="btn btn-primary btn-lg btn-outline-light" href="mailto:hallo@calendariumculinarium.de?subject=Fehler%20bei%20einer%20Kalenderbestellung">Problem melden</a>
                 <p id="server-response-4"></p>
               </div>
               <div id="order-form" class="card-body">                                                         
@@ -69,19 +70,34 @@
 <hr>
 
 <div class="form-group">
-    <label for="form-name">Kontakt</label>
-    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- & Nachname"  disabled :value="[[name]]" >
-    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse"  disabled :value="[[email]]" >
+    <label for="form-name">Lieferadresse</label>
+    <input required name="firstname_delivery" type="text" class="form-control" id="form-firstname-delivery" placeholder="Vorname" :value="[[firstname_delivery]]"  disabled >
+    <input required name="lastname_delivery" type="text" class="form-control" id="form-lastname-delivery" placeholder="Nachname" :value="[[lastname_delivery]]"  disabled >
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" :value="[[email]]"  disabled >
+    <input required name="address_street_delivery" type="text" class="form-control" id="form-address-street-delivery" placeholder="Straße" :value="[[address_street_delivery]]"  disabled >
+    <input required name="address_street_no_delivery" type="text" class="form-control" id="form-address-street-no-delivery" placeholder="Hausnr." :value="[[address_street_no_delivery]]"  disabled >
+    <input required name="address_code_delivery" type="number" class="no-spinner form-control" id="form-address-code-delivery" placeholder="Postleitzahl" :value="[[address_code_delivery]]"  disabled >
+    <input required name="address_city_delivery" type="text" class="form-control" id="form-address-city-delivery" placeholder="Stadt" :value="[[address_city_delivery]]"  disabled >
+    <input required name="address_country_delivery" type="text" class="form-control" id="form-address-country-delivery" placeholder="Land" value="Deutschland" :value="[[address_country_delivery]]"  disabled >
 </div>                                                                
 <hr>
 
-<div class="form-group">
-    <label for="form-address-street">Lieferadresse</label>
-    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße"  disabled :value="[[address_street]]" >
-    <input required name="address_street_no" type="text" class="form-control" id="form-address-street-no" placeholder="Hausnr."  disabled :value="[[address_street_no]]" >
-    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl"  disabled :value="[[address_code]]" >
-    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt"  disabled :value="[[address_city]]" >
-</div>  
+<div class="form-check">
+    <input name="different_invoice_address" type="checkbox" class="form-check-input" id="different-invoice-check" :value="different_invoice_address" v-model="different_invoice_address"  disabled >                            
+    <label class="form-check-label" for="different-invoice-check">abweichende Rechnungsadresse</label>                      
+</div>
+
+<div class="form-group" v-bind:class="(different_invoice_address ? '' : 'collapse')" id="invoice-fields" style="margin-top: 0.5em;">
+    <label for="form-name">Rechnungsadresse</label>
+    <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]"  disabled >
+    <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]"  disabled >    
+    <input required name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]"  disabled >
+    <input required name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]"  disabled >
+    <input required name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]"  disabled >
+    <input required name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]"  disabled >
+    <input required name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]"  disabled >
+</div>                                                                
+<hr>
 
 <div class="form-check" style="margin-bottom: 0.5em;">
     <input name="is_reseller" type="checkbox" class="form-check-input" id="reseller-check"  disabled >                            
@@ -99,7 +115,7 @@
 
 <div class="form-group">
     <label for="form-additional">Eine Nachricht an uns</label>
-    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!"  disabled :value="[[msg]]" ></textarea>
+    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" :value="[[msg]]"  disabled ></textarea>
 </div> 
                     <hr>                    
                     

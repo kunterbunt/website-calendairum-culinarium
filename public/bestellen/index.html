@@ -68,19 +68,34 @@
 <hr>
 
 <div class="form-group">
-    <label for="form-name">Kontakt</label>
-    <input required name="name" type="text" class="form-control" id="form-name" placeholder="Vor- & Nachname" >
-    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" >
+    <label for="form-name">Lieferadresse</label>
+    <input required name="firstname_delivery" type="text" class="form-control" id="form-firstname-delivery" placeholder="Vorname" :value="[[firstname_delivery]]" >
+    <input required name="lastname_delivery" type="text" class="form-control" id="form-lastname-delivery" placeholder="Nachname" :value="[[lastname_delivery]]" >
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" :value="[[email]]" >
+    <input required name="address_street_delivery" type="text" class="form-control" id="form-address-street-delivery" placeholder="Straße" :value="[[address_street_delivery]]" >
+    <input required name="address_street_no_delivery" type="text" class="form-control" id="form-address-street-no-delivery" placeholder="Hausnr." :value="[[address_street_no_delivery]]" >
+    <input required name="address_code_delivery" type="number" class="no-spinner form-control" id="form-address-code-delivery" placeholder="Postleitzahl" :value="[[address_code_delivery]]" >
+    <input required name="address_city_delivery" type="text" class="form-control" id="form-address-city-delivery" placeholder="Stadt" :value="[[address_city_delivery]]" >
+    <input required name="address_country_delivery" type="text" class="form-control" id="form-address-country-delivery" placeholder="Land" value="Deutschland" :value="[[address_country_delivery]]" >
 </div>                                                                
 <hr>
 
-<div class="form-group">
-    <label for="form-address-street">Lieferadresse</label>
-    <input required name="address_street" type="text" class="form-control" id="form-address-street" placeholder="Straße" >
-    <input required name="address_street_no" type="text" class="form-control" id="form-address-street-no" placeholder="Hausnr." >
-    <input required name="address_code" type="number" class="no-spinner form-control" id="form-address-code" placeholder="Postleitzahl" >
-    <input required name="address_city" type="text" class="form-control" id="form-address-city" placeholder="Stadt" >
-</div>  
+<div class="form-check">
+    <input name="different_invoice_address" type="checkbox" class="form-check-input" id="different-invoice-check" :value="different_invoice_address" v-model="different_invoice_address" >                            
+    <label class="form-check-label" for="different-invoice-check">abweichende Rechnungsadresse</label>                      
+</div>
+
+<div class="form-group" v-bind:class="(different_invoice_address ? '' : 'collapse')" id="invoice-fields" style="margin-top: 0.5em;">
+    <label for="form-name">Rechnungsadresse</label>
+    <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" >
+    <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" >    
+    <input required name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" >
+    <input required name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" >
+    <input required name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" >
+    <input required name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" >
+    <input required name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" >
+</div>                                                                
+<hr>
 
 <div class="form-check" style="margin-bottom: 0.5em;">
     <input name="is_reseller" type="checkbox" class="form-check-input" id="reseller-check" >                            
@@ -98,10 +113,10 @@
 
 <div class="form-group">
     <label for="form-additional">Eine Nachricht an uns</label>
-    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" ></textarea>
+    <textarea name="message" class="form-control" id="form-additional" rows="5" placeholder="Nettes Feedback? Versand außerhalb Deutschlands? Schicke uns hier eine Nachricht!" :value="[[msg]]" ></textarea>
 </div>                                                
                         <div class="submit-button-container center-text">                            
-                            <button v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
+                            <button id="place-order-button" class="btn btn-lg btn-outline-dark">Bestellung überprüfen</button>                            
                         </div>                    
                     </form>
                 </div>
@@ -110,6 +125,6 @@
     </div>
   
     <script src="https://calendariumculinarium.de/js/vue-2.6.12.js"></script>    
-    <script src="https://calendariumculinarium.de/js/bestellen.js"></script>    
+    <script src="https://calendariumculinarium.de/js/bestellung.js"></script>    
     </body>
 </html>

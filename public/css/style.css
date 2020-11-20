@@ -119,8 +119,8 @@ input.no-spinner[type=number] {
     margin: 2em 0;
 }
 
-.loader {
-    margin-left: 102px;
+#loader {
+    margin-left: calc(50% - 32px);
     margin-bottom: 32px;
     border: 4px solid #e9ecef; /* Light grey */
     border-top: 4px solid #d40000; /* Blue */
@@ -137,10 +137,6 @@ input.no-spinner[type=number] {
 
 .hide {
     display: none !important;
-}
-
-#problem-button {
-    margin-bottom: 16px;
 }
 
 #server-response {
