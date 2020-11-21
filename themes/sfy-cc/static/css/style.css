@@ -38,6 +38,10 @@ body {
     margin-bottom: 0;
 }
 
+#features img {
+    margin-top: 2em;
+}
+
 a {
     color: white;
 }
