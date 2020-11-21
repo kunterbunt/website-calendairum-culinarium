@@ -115,7 +115,7 @@ input.no-spinner[type=number] {
     text-align: center;
 }
 
-#order {
+#order, .card {
     margin: 2em 0;
 }
 
