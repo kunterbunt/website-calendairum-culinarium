@@ -125,6 +125,7 @@ var app = new Vue({
                 $("#server-response").text(response.data)                
                 $("#problem-button").addClass('hide')
                 $("#note-preorder").addClass('mute')
+                $("#order-title").text("Bestellung eingegangen! :)")
             })
             .catch(function (error) {
                 // handle error
