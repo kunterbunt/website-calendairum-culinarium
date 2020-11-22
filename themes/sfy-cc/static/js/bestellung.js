@@ -122,8 +122,9 @@ var app = new Vue({
             }).then(function (response) {
                 // handle success
                 $("#loader").addClass('hide')
-                $("#server-response").text(response.data)
+                $("#server-response").text(response.data)                
                 $("#problem-button").addClass('hide')
+                $("#note-preorder").addClass('mute')
             })
             .catch(function (error) {
                 // handle error

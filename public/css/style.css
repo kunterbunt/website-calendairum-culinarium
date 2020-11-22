@@ -31,7 +31,15 @@ body {
 
 #detailed-description {
     padding-top: 2em;
-    padding-bottom: 2em;
+    padding-bottom: 2em;    
+}
+
+#detailed-description p {
+    font-size: large !important;
+}
+
+.mute {
+    color: gray;
 }
 
 #features {
