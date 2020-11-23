@@ -34,8 +34,12 @@ body {
     padding-bottom: 2em;    
 }
 
-#detailed-description p {
-    font-size: large !important;
+.description p {
+    line-height: 24pt;
+}
+
+.decsription-img {
+    margin: 3em 0;
 }
 
 .mute {
