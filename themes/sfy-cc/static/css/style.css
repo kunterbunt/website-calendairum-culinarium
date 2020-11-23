@@ -34,6 +34,10 @@ body {
     padding-bottom: 2em;    
 }
 
+p {
+    line-height: 20pt;
+}
+
 .description p {
     line-height: 24pt;
 }
