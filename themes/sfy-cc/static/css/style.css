@@ -38,6 +38,14 @@ body {
     padding-bottom: 2em;    
 }
 
+.circle {
+    border-radius: 50%;    
+}
+
+.logo {
+    height: 128px;
+}
+
 p {
     line-height: 20pt;
 }
