@@ -9,7 +9,11 @@ body {
 
 .carousel-caption h1 {
     line-height: 38pt;
-    font-size: 3.75rem;
+    font-size: 3rem;
+}
+
+.carousel-caption h5 {
+    line-height: 16pt;
 }
 
 #fixed {
