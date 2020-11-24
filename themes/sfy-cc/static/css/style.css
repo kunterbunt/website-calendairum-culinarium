@@ -7,6 +7,10 @@ body {
     object-fit: cover;
 }
 
+.carousel-caption h1 {
+    line-height: 24pt;
+}
+
 #fixed {
     height: calc(100vh - 72px);
     background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75) ), url("/theme-imgs/background.jpg") no-repeat center center fixed;
