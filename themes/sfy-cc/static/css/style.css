@@ -7,9 +7,9 @@ body {
     object-fit: cover;
 }
 
-.carousel-caption h1 {
+.carousel-caption h1 {    
+    font-size: 32pt;
     line-height: 30pt;
-    font-size: 3rem;
 }
 
 .carousel-caption h5 {
