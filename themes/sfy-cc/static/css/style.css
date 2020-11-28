@@ -13,7 +13,7 @@ body {
 }
 
 .carousel-caption h5 {
-    line-height: 15pt;
+    line-height: 18pt;
 }
 
 #fixed {
@@ -34,8 +34,13 @@ body {
     height: 80vh;
 }
 
-#description .row, p {
+#note-preorder p {
+    line-height: 16pt;
+}
+
+#description .row {    
     margin-bottom: 0;
+    line-height: 22pt;
 }
 
 #detailed-description {
