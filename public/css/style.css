@@ -34,6 +34,10 @@ body {
     height: 80vh;
 }
 
+#klappentext {
+    text-align: left;
+}
+
 #note-preorder p {
     line-height: 16pt;
 }
