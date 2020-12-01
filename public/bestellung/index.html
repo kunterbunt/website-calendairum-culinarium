@@ -28,11 +28,7 @@
           <div id="order" class="card col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">                          
               <div class="card-body text-center">
                 <h1 id="order-title" class="card-title">Bestellung überprüfen</h1>                
-              </div>
-              <div id="note-preorder" class="card-body text-center">
-    <p>Bis Ende November nehmen wir nur Vorbestellungen an.</p>
-    <p>Anfang Dezember startet dann der Versand.</p>
-</div>
+              </div>              
               <div id="loader-container" class="hide center-text">
                 <div id="loader" class="loader"></div>
                 <p id="server-response"></p>
@@ -70,34 +66,35 @@
 <hr>
 
 <div class="form-group">
-    <label for="form-name">Lieferadresse</label>
-    <input required name="firstname_delivery" type="text" class="form-control" id="form-firstname-delivery" placeholder="Vorname" :value="[[firstname_delivery]]"  disabled >
-    <input required name="lastname_delivery" type="text" class="form-control" id="form-lastname-delivery" placeholder="Nachname" :value="[[lastname_delivery]]"  disabled >
+    <label for="form-name">Rechnungsadresse</label>
+    <input required name="company_invoice" type="text" class="form-control" id="form-company-invoice" placeholder="Firma" :value="[[company_invoice]]"  disabled >
+    <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]"  disabled >
+    <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]"  disabled >    
     <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" :value="[[email]]"  disabled >
-    <input required name="address_street_delivery" type="text" class="form-control" id="form-address-street-delivery" placeholder="Straße" :value="[[address_street_delivery]]"  disabled >
-    <input required name="address_street_no_delivery" type="text" class="form-control" id="form-address-street-no-delivery" placeholder="Hausnr." :value="[[address_street_no_delivery]]"  disabled >
-    <input required name="address_code_delivery" type="number" class="no-spinner form-control" id="form-address-code-delivery" placeholder="Postleitzahl" :value="[[address_code_delivery]]"  disabled >
-    <input required name="address_city_delivery" type="text" class="form-control" id="form-address-city-delivery" placeholder="Stadt" :value="[[address_city_delivery]]"  disabled >
-    <input required name="address_country_delivery" type="text" class="form-control" id="form-address-country-delivery" placeholder="Land" value="Deutschland" :value="[[address_country_delivery]]"  disabled >
-</div>                                                                
+    <input required name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]"  disabled >
+    <input required name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]"  disabled >
+    <input required name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]"  disabled >
+    <input required name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]"  disabled >
+    <input required name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]"  disabled >
+</div>                                                                                                                                
 <hr>
 
 <div class="form-check">
-    <input name="different_invoice_address" type="checkbox" class="form-check-input" id="different-invoice-check"  disabled  >                            
-    <label class="form-check-label" for="different-invoice-check">abweichende Rechnungsadresse</label>                      
+    <input name="different_delivery_address" type="checkbox" class="form-check-input" id="different-delivery-check"  disabled  >                            
+    <label class="form-check-label" for="different-delivery-check">abweichende Lieferadresse</label>                      
 </div>
 
-
-<div class="form-group collapse" id="invoice-fields" style="margin-top: 0.5em;">
-    <label for="form-name">Rechnungsadresse</label>
-    <input name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]"  disabled >
-    <input name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]"  disabled >    
-    <input name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]"  disabled >
-    <input name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]"  disabled >
-    <input name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]"  disabled >
-    <input name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]"  disabled >
-    <input name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]"  disabled >
-</div>                                                                
+<div class="form-group collapse" id="delivery-fields" style="margin-top: 0.5em;">
+    <label for="form-name">Lieferadresse</label>
+    <input name="company_delivery" type="text" class="form-control" id="form-company-delivery" placeholder="Firma" :value="[[company_delivery]]"  disabled >
+    <input name="firstname_delivery" type="text" class="form-control" id="form-firstname-delivery" placeholder="Vorname" :value="[[firstname_delivery]]"  disabled >
+    <input name="lastname_delivery" type="text" class="form-control" id="form-lastname-delivery" placeholder="Nachname" :value="[[lastname_delivery]]"  disabled >    
+    <input name="address_street_delivery" type="text" class="form-control" id="form-address-street-delivery" placeholder="Straße" :value="[[address_street_delivery]]"  disabled >
+    <input name="address_street_no_delivery" type="text" class="form-control" id="form-address-street-no-delivery" placeholder="Hausnr." :value="[[address_street_no_delivery]]"  disabled >
+    <input name="address_code_delivery" type="number" class="no-spinner form-control" id="form-address-code-delivery" placeholder="Postleitzahl" :value="[[address_code_delivery]]"  disabled >
+    <input name="address_city_delivery" type="text" class="form-control" id="form-address-city-delivery" placeholder="Stadt" :value="[[address_city_delivery]]"  disabled >
+    <input name="address_country_delivery" type="text" class="form-control" id="form-address-country-delivery" placeholder="Land" value="Deutschland" :value="[[address_country_delivery]]"  disabled >
+</div>
 <hr>
 
 <div class="form-check" style="margin-bottom: 0.5em;">

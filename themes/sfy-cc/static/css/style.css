@@ -39,7 +39,11 @@ body {
 }
 
 #note-preorder p {
-    line-height: 16pt;
+    line-height: 20pt;
+}
+
+#kaufen h2 {
+    margin-bottom: 1em;
 }
 
 #description .row {    

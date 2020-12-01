@@ -20,26 +20,24 @@ var app = new Vue({
     data: {
         price: 20,
         amount: 0,
+        company_delivery: null,
         firstname_delivery: null,
         lastname_delivery: null,
-        email: null,
-        address_street_delivery: null,
-        address_street_no_delivery: null,
-        address_code_delivery: null,
-        address_city_delivery: null,
-        address_country_delivery: null,
-        different_invoice_address: null,
+        email: null,        
+        company_invoice: null,
         firstname_invoice: null,
         lastname_invoice: null,
         address_street_invoice: null,
         address_street_no_invoice: null,
         address_code_invoice: null,
         address_city_invoice: null,
-        address_country_invoice: null,        
-        address_street: null,
-        address_street_no: null,
-        address_code: null,
-        address_city: null,
+        address_country_invoice: null,
+        different_delivery_address: null,                        
+        address_street_delivery: null,
+        address_street_no_delivery: null,
+        address_code_delivery: null,
+        address_city_delivery: null,
+        address_country_delivery: null,        
         sf_member: null,
         msg: null,
         is_reseller: false,
@@ -57,13 +55,29 @@ var app = new Vue({
                 window.alert("Na, wenigstens einen Kalender solltest Du schon bestellen wollen!")
                 return false
             }
-            if (!this.reg_plz_de.test(this.address_code_delivery) && !this.reg_plz_at.test(this.address_code_delivery)) {
-                window.alert("Die Postleitzahl ist nicht gültig (Lieferadresse)!")
+            if (!this.reg_plz_de.test(this.address_code_invoice) && !this.reg_plz_at.test(this.address_code_invoice)) {
+                window.alert("Die Postleitzahl ist nicht gültig (Rechnungsadresse)!")
                 return false
             }
-            if (this.different_invoice_address) {
-                if (!this.reg_plz_de.test(this.address_code_invoice) && !this.reg_plz_at.test(this.address_code_invoice)) {
-                    window.alert("Die Postleitzahl ist nicht gültig (Rechnungsadresse)!")
+            if (this.different_delivery_address) {
+                if (!this.reg_plz_de.test(this.address_code_delivery) && !this.reg_plz_at.test(this.address_code_delivery)) {
+                    window.alert("Die Postleitzahl ist nicht gültig (Lieferadresse)!")
+                    return false
+                }
+                if (this.firstname_delivery == null || this.firstname_delivery == "" || this.lastname_delivery == null || this.lastname_delivery == "") {
+                    window.alert("Bitte Namen für Lieferadresse angeben!" + this.first_name_delivery)
+                    return false
+                }
+                if (this.address_street_delivery == null || this.address_street_delivery == "") {
+                    window.alert("Bitte Straße für Lieferadresse angeben!")
+                    return false
+                }
+                if (this.address_street_no_delivery == null || this.address_street_no_delivery == "") {
+                    window.alert("Bitte Hausnummer für Lieferadresse angeben!")
+                    return false
+                }
+                if (this.address_city_delivery == null || this.address_city_delivery == "") {
+                    window.alert("Bitte Stadt für Lieferadresse angeben!")
                     return false
                 }
             }
@@ -97,21 +111,23 @@ var app = new Vue({
                 data: {
                     "product_id": 1,
                     "amount": parseInt(this.amount),
-                    "first_name_invoice": this.different_invoice_address ? this.firstname_invoice : this.firstname_delivery,     
-                    "last_name_invoice": this.different_invoice_address ? this.lastname_invoice : this.lastname_delivery,
-                    "first_name_delivery": this.firstname_delivery,
-                    "last_name_delivery": this.lastname_delivery,
+                    "company_invoice": this.company_invoice,
+                    "first_name_invoice": this.firstname_invoice,
+                    "last_name_invoice": this.lastname_invoice,
+                    "company_delivery": this.company_delivery,
+                    "first_name_delivery": this.different_delivery_address ? this.firstname_delivery : this.firstname_invoice,     
+                    "last_name_delivery": this.different_delivery_address ? this.lastname_delivery : this.lastname_invoice,                    
                     "email": this.email, 
-                    "address_street_invoice": this.different_invoice_address ? this.address_street_invoice : this.address_street_delivery,
-                    "address_street_no_invoice": this.different_invoice_address ? this.address_street_no_invoice : this.address_street_no_delivery,
-                    "address_code_invoice": this.different_invoice_address ? this.address_code_invoice : this.address_code_delivery, 
-                    "address_city_invoice": this.different_invoice_address ? this.address_city_invoice : this.address_city_delivery,                     
-                    "address_country_invoice": this.different_invoice_address ? this.address_country_invoice : this.address_country_delivery, 
-                    "address_street_delivery": this.address_street_delivery,
-                    "address_street_no_delivery": this.address_street_no_delivery,
-                    "address_code_delivery": this.address_code_delivery, 
-                    "address_city_delivery": this.address_city_delivery, 
-                    "address_country_delivery": this.address_country_delivery, 
+                    "address_street_invoice": this.address_street_invoice,
+                    "address_street_no_invoice": this.address_street_no_invoice,
+                    "address_code_invoice": this.address_code_invoice, 
+                    "address_city_invoice": this.address_city_invoice, 
+                    "address_country_invoice": this.address_country_invoice, 
+                    "address_street_delivery": this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice,
+                    "address_street_no_delivery": this.different_delivery_address ? this.address_street_no_delivery : this.address_street_no_invoice,
+                    "address_code_delivery": this.different_delivery_address ? this.address_code_delivery : this.address_code_invoice, 
+                    "address_city_delivery": this.different_delivery_address ? this.address_city_delivery : this.address_city_invoice,                     
+                    "address_country_delivery": this.different_delivery_address ? this.address_country_delivery : this.address_country_invoice,                     
                     "payment": this.payment,
                     "is_reseller": this.is_reseller, 
                     "slow_food_member": this.sf_member, 
@@ -165,8 +181,10 @@ var app = new Vue({
     mounted() {
         amnt = parseInt(getUrlParameter('amount'))
         this.amount = isNaN(amnt) ? 1 : amnt        
+        this.company_delivery = getUrlParameter('company_delivery').replace(/\+/g, ' ')        
         this.firstname_delivery = getUrlParameter('firstname_delivery').replace(/\+/g, ' ')        
         this.lastname_delivery = getUrlParameter('lastname_delivery').replace(/\+/g, ' ')                
+        this.company_invoice = getUrlParameter('company_invoice').replace(/\+/g, ' ')        
         this.firstname_invoice = getUrlParameter('firstname_invoice').replace(/\+/g, ' ')        
         this.lastname_invoice = getUrlParameter('lastname_invoice').replace(/\+/g, ' ')                
         this.email = getUrlParameter('email')
@@ -179,10 +197,10 @@ var app = new Vue({
         this.address_city_delivery = getUrlParameter('address_city_delivery').replace(/\+/g, ' ')        
         country_delivery = getUrlParameter('address_country_delivery').replace(/\+/g, ' ')        
         this.address_country_delivery = country_delivery == "" ? "Deutschland" : country_delivery        
-        this.different_invoice_address = (getUrlParameter('different_invoice_address') == 'checked' || getUrlParameter('different_invoice_address') == 'on' || getUrlParameter('different_invoice_address') == 'true') ? true : false        
-        $("#different-invoice-check").prop('checked', this.different_invoice_address)
-        if (this.different_invoice_address) {
-            $("#invoice-fields").collapse()
+        this.different_delivery_address = (getUrlParameter('different_delivery_address') == 'checked' || getUrlParameter('different_delivery_address') == 'on' || getUrlParameter('different_delivery_address') == 'true') ? true : false        
+        $("#different-delivery-check").prop('checked', this.different_delivery_address)
+        if (this.different_delivery_address) {
+            $("#delivery-fields").collapse()
         }
         this.address_street_invoice = getUrlParameter('address_street_invoice').replace(/\+/g, ' ')
         this.address_street_no_invoice = getUrlParameter('address_street_no_invoice').replace(/\+/g, ' ')

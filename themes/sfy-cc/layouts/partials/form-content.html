@@ -23,36 +23,37 @@
 <p>Der Versand erfolgt nach Zahlung in Vorkasse per Überweisung oder via PayPal. Die entsprechenden Zahlungsdetails erhältst Du in Deiner Bestellbestätigung.</p>
 </div>   
 <hr>
-<!-- Lieferadresse -->
-<div class="form-group">
-    <label for="form-name">Lieferadresse</label>
-    <input required name="firstname_delivery" type="text" class="form-control" id="form-firstname-delivery" placeholder="Vorname" :value="[[firstname_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="lastname_delivery" type="text" class="form-control" id="form-lastname-delivery" placeholder="Nachname" :value="[[lastname_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" :value="[[email]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_street_delivery" type="text" class="form-control" id="form-address-street-delivery" placeholder="Straße" :value="[[address_street_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_street_no_delivery" type="text" class="form-control" id="form-address-street-no-delivery" placeholder="Hausnr." :value="[[address_street_no_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_code_delivery" type="number" class="no-spinner form-control" id="form-address-code-delivery" placeholder="Postleitzahl" :value="[[address_code_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_city_delivery" type="text" class="form-control" id="form-address-city-delivery" placeholder="Stadt" :value="[[address_city_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input required name="address_country_delivery" type="text" class="form-control" id="form-address-country-delivery" placeholder="Land" value="Deutschland" :value="[[address_country_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-</div>                                                                
-<hr>
-<!-- Abweichende Rechnungsadresse -->
-<div class="form-check">
-    <input name="different_invoice_address" type="checkbox" class="form-check-input" id="different-invoice-check" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }} {{ if in (print .RelPermalink) "bestellen" }} data-toggle="collapse" data-target="#invoice-fields" {{ end }}>                            
-    <label class="form-check-label" for="different-invoice-check">abweichende Rechnungsadresse</label>                      
-</div>
 <!-- Rechnungsadresse -->
-<!-- <div v-bind:class="(different_invoice_address ? 'form-group' : 'collapse form-group')" id="invoice-fields" style="margin-top: 0.5em;"> -->
-<div class="form-group collapse" id="invoice-fields" style="margin-top: 0.5em;">
+<div class="form-group">
     <label for="form-name">Rechnungsadresse</label>
-    <input name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>    
-    <input name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-    <input name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
-</div>                                                                
+    <input required name="company_invoice" type="text" class="form-control" id="form-company-invoice" placeholder="Firma" :value="[[company_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>    
+    <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" :value="[[email]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="address_street_invoice" type="text" class="form-control" id="form-address-street-invoice" placeholder="Straße" :value="[[address_street_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="address_street_no_invoice" type="text" class="form-control" id="form-address-street-no-invoice" placeholder="Hausnr." :value="[[address_street_no_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="address_code_invoice" type="number" class="no-spinner form-control" id="form-address-code-invoice" placeholder="Postleitzahl" :value="[[address_code_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="address_city_invoice" type="text" class="form-control" id="form-address-city-invoice" placeholder="Stadt" :value="[[address_city_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input required name="address_country_invoice" type="text" class="form-control" id="form-address-country-invoice" placeholder="Land" value="Deutschland" :value="[[address_country_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+</div>                                                                                                                                
+<hr>
+<!-- Abweichende Lieferadresse -->
+<div class="form-check">
+    <input name="different_delivery_address" type="checkbox" class="form-check-input" id="different-delivery-check" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }} {{ if in (print .RelPermalink) "bestellen" }} data-toggle="collapse" data-target="#delivery-fields" {{ end }}>                            
+    <label class="form-check-label" for="different-delivery-check">abweichende Lieferadresse</label>                      
+</div>
+<!-- Lieferadresse -->
+<div class="form-group collapse" id="delivery-fields" style="margin-top: 0.5em;">
+    <label for="form-name">Lieferadresse</label>
+    <input name="company_delivery" type="text" class="form-control" id="form-company-delivery" placeholder="Firma" :value="[[company_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="firstname_delivery" type="text" class="form-control" id="form-firstname-delivery" placeholder="Vorname" :value="[[firstname_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="lastname_delivery" type="text" class="form-control" id="form-lastname-delivery" placeholder="Nachname" :value="[[lastname_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>    
+    <input name="address_street_delivery" type="text" class="form-control" id="form-address-street-delivery" placeholder="Straße" :value="[[address_street_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_street_no_delivery" type="text" class="form-control" id="form-address-street-no-delivery" placeholder="Hausnr." :value="[[address_street_no_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_code_delivery" type="number" class="no-spinner form-control" id="form-address-code-delivery" placeholder="Postleitzahl" :value="[[address_code_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_city_delivery" type="text" class="form-control" id="form-address-city-delivery" placeholder="Stadt" :value="[[address_city_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="address_country_delivery" type="text" class="form-control" id="form-address-country-delivery" placeholder="Land" value="Deutschland" :value="[[address_country_delivery]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+</div>
 <hr>
 <!-- Reseller -->
 <div class="form-check" style="margin-bottom: 0.5em;">
