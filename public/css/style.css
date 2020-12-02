@@ -18,7 +18,7 @@ body {
 
 #fixed {
     height: calc(100vh - 72px);
-    background: linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75) ), url("/theme-imgs/background.jpg") no-repeat center center fixed;
+    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/theme-imgs/header.jpg") no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -56,12 +56,43 @@ body {
     padding-bottom: 2em;    
 }
 
+.detail-img-container {
+    padding: 20em 20em;
+}
+
 .circle {
     border-radius: 50%;    
 }
-
 .logo {
     height: 128px;
+}
+.info-icon {
+    height: 128px;
+}
+
+.logosf {
+    height: 128px;    
+}
+.logosfy {
+    height: 148px;
+}
+
+.icon {
+    height: 128px;
+    margin-bottom: 1em;
+}
+
+.nopm {
+    margin: 0;
+    padding: 0;
+}
+.detail-img {
+    width: 100%;
+    height: 60vh;
+}
+.center-img {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 p {
