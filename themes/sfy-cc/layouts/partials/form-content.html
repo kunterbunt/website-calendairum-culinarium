@@ -26,7 +26,7 @@
 <!-- Rechnungsadresse -->
 <div class="form-group">
     <label for="form-name">Rechnungsadresse</label>
-    <input required name="company_invoice" type="text" class="form-control" id="form-company-invoice" placeholder="Firma" :value="[[company_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
+    <input name="company_invoice" type="text" class="form-control" id="form-company-invoice" placeholder="Firma" :value="[[company_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
     <input required name="firstname_invoice" type="text" class="form-control" id="form-firstname-invoice" placeholder="Vorname" :value="[[firstname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
     <input required name="lastname_invoice" type="text" class="form-control" id="form-lastname-invoice" placeholder="Nachname" :value="[[lastname_invoice]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>    
     <input required name="email" type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Emailadresse" :value="[[email]]" {{ if in (print .RelPermalink) "bestellung" }} disabled {{ end }}>
