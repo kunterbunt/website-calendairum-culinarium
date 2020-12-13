@@ -126,10 +126,15 @@ var app = new Vue({
             var script = document.createElement('script')
             // script.src = "https://www.paypal.com/sdk/js?client-id=ARDSKiyNT-7Me_5MbJnxO8o7eiwO63MEhj7rB4gjZG05egtPPwYxKzY-SYtDssmmKioVabqW1LmCVjeL&currency=EUR"            
             script.src = "https://www.paypal.com/sdk/js?client-id=AaajwREkp6udI8Cif5iEIJn-pTOU_q_t7McSR_XKDqmILqp4PLuNRX_6WIA1ETw8aveqOAhFuv1WTeBZ&currency=EUR"
-            script.type = 'text/javascript'                
+            script.type = 'text/javascript'               
+            console.log(STREET) 
+            console.log(COMPANY)
+            console.log(CITY)
+            console.log(CODE)
+            console.log(COUNTRY)
             script.onload = function() {                                                     
                 paypal.Buttons({
-                    createOrder: function(data, actions) {
+                    createOrder: function(data, actions) {                    
                     return actions.order.create({
                         application_context: {
                             // shipping_preference: "NO_SHIPPING"
@@ -157,8 +162,8 @@ var app = new Vue({
                             reference_id: ORDER_ID,
                             shipping: {
                                 address: {
-                                    address_line_1: COMPANY == null ? STREET : COMPANY,
-                                    address_line_2: COMPANY == null ? "" : STREET,
+                                    address_line_1: (COMPANY == null || COMPANY == "") ? STREET : COMPANY,
+                                    address_line_2: (COMPANY == null || COMPANY == "") ? "" : STREET,
                                     admin_area_1: "",
                                     admin_area_2: CITY,                                    
                                     postal_code: CODE,                                    
@@ -223,7 +228,7 @@ var app = new Vue({
             }                        
             $("#order-form").addClass('hide')
             $("#loader-container").removeClass('hide')
-            $("#order-title").text("Übermittle Bestellung...")            
+            $("#order-title").text("Übermittle Bestellung...")                        
             axios({
                 method: 'post',                
                 url: 'https://calendariumculinarium.de/api/orders',
@@ -271,8 +276,8 @@ var app = new Vue({
                 $("#order-title").text("Bestellung eingegangen!")                
                 if (this.payment == "paypal") {                                                            
                     TOTAL = this.computeNumericPrice().toFixed(2)
-                    ORDER_ID = order_id.toString()                     
-                    STREET = (this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice) + " " + (this.different_delivery_address ? this.address_street_no_delivery.toString() : this.address_street_no_invoice.toString())                     
+                    ORDER_ID = order_id.toString()                                         
+                    STREET = (this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice) + " " + (this.different_delivery_address ? this.address_street_no_delivery.toString() : this.address_street_no_invoice.toString())                                         
                     CITY = this.different_delivery_address ? this.address_city_delivery : this.address_city_invoice
                     CODE = this.different_delivery_address ? this.address_code_delivery.toString() : this.address_code_invoice.toString()
                     COUNTRY = setCountryCode(this.different_delivery_address ? this.address_country_delivery : this.address_country_invoice)                                        
