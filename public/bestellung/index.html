@@ -4,6 +4,7 @@
     <title>Calendarium Culinarium</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <title> Calendarium Culinarium </title>
 <!-- Responsive Stylesheet -->
 <link rel="stylesheet" href="https://calendariumculinarium.de/bootstrap-4.5.3-dist/css/bootstrap.min.css"></script>    
@@ -14,7 +15,8 @@
 <link href="https://calendariumculinarium.de/fontawesome/css/all.css" rel="stylesheet">    
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>        
   </head>
-  <body>
+  <body>    
+    
       <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">calendarium culinarium</a>
@@ -26,17 +28,21 @@
       <div class="container-fluid">
         <div class="row">          
           <div id="order" class="card col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-4 mx-auto">                          
-              <div class="card-body text-center">
+              <div class="card-body text-center">                
                 <h1 id="order-title" class="card-title">Bestellung überprüfen</h1>                
               </div>              
               <div id="loader-container" class="hide center-text">
-                <div id="loader" class="loader"></div>
+                <div id="server-loader" class="loader"></div>
                 <p id="server-response"></p>
                 <p id="server-response-2"></p>
                 <p id="server-response-3"></p>                
                 <a id="problem-button" class="btn btn-primary btn-lg btn-outline-light" href="mailto:hallo@calendariumculinarium.de?subject=Fehler%20bei%20einer%20Kalenderbestellung">Problem melden</a>
                 <p id="server-response-4"></p>
               </div>
+              <div id="paypal-button-container" class="hide">
+                <p>Du hast PayPal als Zahlungsmittel gewählt, darum kannst Du gerne direkt darüber bezahlen:</p>
+                <div id="paypal-loader" class="loader"></div>
+              </div>              
               <div id="order-form" class="card-body">                                                         
                   <form>
                     
@@ -55,7 +61,12 @@
       Überweisung <i class="fas fa-money-check"></i>
     </label>
 </div>
-
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="payment" id="payment-paypal" value="paypal"  disabled >
+    <label class="form-check-label" for="payment-paypal">
+      PayPal <i class="fab fa-paypal"></i>
+    </label>
+</div>
 <p>Der Versand erfolgt nach Zahlung in Vorkasse. Die entsprechenden Zahlungsdetails erhältst Du in Deiner Bestellbestätigung.</p>
 </div>   
 <hr>
@@ -126,7 +137,7 @@
                     <button v-on:click="backButtonClicked()" id="back-button" class="btn btn-outline-dark">Zurück</button>
                     <button v-on:click="orderButtonClicked()" id="place-order-button" class="btn btn-outline-dark">Zahlungspflichtig bestellen!</button>
                   </div>                    
-              </div>
+              </div>              
           </div>
       </div>
   </div>

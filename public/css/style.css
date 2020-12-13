@@ -200,7 +200,7 @@ input.no-spinner[type=number] {
     line-height: 16pt;
 }
 
-#loader {
+.loader {
     margin-left: calc(50% - 32px);
     margin-bottom: 32px;
     border: 4px solid #e9ecef; /* Light grey */

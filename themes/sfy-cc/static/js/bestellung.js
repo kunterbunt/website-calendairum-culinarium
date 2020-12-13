@@ -14,10 +14,36 @@ var getUrlParameter = function getUrlParameter(sParam) {
     return ""
 };
 
+supported_countries = ["Deutschland", "Österreich", "Niederlande", "Schweiz", "Frankfreich"]
+
+var setCountryCode = function setCountryCode(country_name) {
+    if (country_name == "Deutschland")
+        return "DE"
+    else if (country_name == "Österreich")
+        return "AT"
+    else if (country_name == "Niederlande")
+        return "NL"
+    else if (country_name == "Schweiz")
+        return "CH"
+    else if (country_name == "Frankreich" || country_name == "France")
+        return "FR"            
+    else 
+        return "UNKNOWN"
+}
+
+var TOTAL
+var ORDER_ID
+var STREET
+var CITY
+var CODE
+var COUNTRY
+var FULL_NAME
+var COMPANY
+
 var app = new Vue({
     el: '#order',
     delimiters: ['[[', ']]'],    
-    data: {
+    data: {        
         price: 20,
         amount: 0,
         company_delivery: null,
@@ -95,16 +121,113 @@ var app = new Vue({
             }            
             return true
         },
+        preparePaypal() {            
+            var head = document.getElementsByTagName('head')[0]
+            var script = document.createElement('script')
+            // script.src = "https://www.paypal.com/sdk/js?client-id=ARDSKiyNT-7Me_5MbJnxO8o7eiwO63MEhj7rB4gjZG05egtPPwYxKzY-SYtDssmmKioVabqW1LmCVjeL&currency=EUR"            
+            script.src = "https://www.paypal.com/sdk/js?client-id=AaajwREkp6udI8Cif5iEIJn-pTOU_q_t7McSR_XKDqmILqp4PLuNRX_6WIA1ETw8aveqOAhFuv1WTeBZ&currency=EUR"
+            script.type = 'text/javascript'                
+            script.onload = function() {                                                     
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                    return actions.order.create({
+                        application_context: {
+                            // shipping_preference: "NO_SHIPPING"
+                            shipping_preference: "SET_PROVIDED_ADDRESS",
+                            user_action: "PAY_NOW", 
+                            payment_method: {payer_selected: "PAYPAL", payee_preferred: "IMMEDIATE_PAYMENT_REQUIRED"}
+                        },                                    
+                        purchase_units: [{
+                            amount: {value: TOTAL, currency_code: 'EUR', 
+                                // breakdown: {
+                                //     item_total: { currency_code: "EUR", value: "19.50"},
+                                //     shipping: { currency_code: "EUR", value: "0.00"},
+                                //     handling: { currency_code: "EUR", value: "0.00"},
+                                //     tax_total: { currency_code: "EUR", value: "0.50"}
+                                // }
+                            },         
+                            // items: [{
+                            //     name: "Calendarium Culinarium",
+                            // //     unit_amount: {currency_code: "EUR", value: "20.00"},
+                            //     quantity: "2"
+                            // }],
+                            description: "Calendarium Culinarium " + ORDER_ID,         
+                            soft_descriptor: "Calendarium",
+                            custom_id: ORDER_ID,
+                            reference_id: ORDER_ID,
+                            shipping: {
+                                address: {
+                                    address_line_1: COMPANY == null ? STREET : COMPANY,
+                                    address_line_2: COMPANY == null ? "" : STREET,
+                                    admin_area_1: "",
+                                    admin_area_2: CITY,                                    
+                                    postal_code: CODE,                                    
+                                    country_code: COUNTRY
+                                },
+                                name: {full_name: FULL_NAME}
+                            },                                        
+                        }],                               
+                    });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            $("#paypal-button-container").addClass('hide')  
+                            $("#server-response-2").addClass('mute')
+                            $("#server-response-3").text('Bezahlung erfolgreich. Danke, ' + details.payer.name.given_name + '!')                            
+                        });
+                    },
+                    onCancel: function(data) {
+                        // Nix zu machen.
+                    }
+            }).render('#paypal-button-container'); // Display payment options on your web page
+            }
+            head.appendChild(script)                                    
+        },
+        computeNumericPrice() {
+            var discount = 0
+            if (this.amount < 3) {
+                discount = 0
+            } else if (this.amount < 5) {
+                discount = .1
+            } else if (this.amount < 50) {
+                discount = 0.15
+            } else {
+                discount = 0.2
+            }
+            var price_before_discount = this.amount * this.price
+            var price_after_discount = price_before_discount * (1-discount)
+            return price_after_discount
+        },
+        computeCurrentPrice() {            
+            var discount = 0
+            if (this.amount < 3) {
+                discount = 0
+            } else if (this.amount < 5) {
+                discount = .1
+            } else if (this.amount < 50) {
+                discount = 0.15
+            } else {
+                discount = 0.2
+            }
+            var price_before_discount = this.amount * this.price
+            var price_after_discount = price_before_discount * (1-discount)
+            if (isNaN(price_after_discount)) {
+                return "Bitte Menge auswählen!"
+            } else {
+                return price_after_discount + (discount > 0 ? " (" + (discount*100) + "% Rabatt!)" : "")
+            }
+        },        
         orderButtonClicked() {
             if (!this.validateInput()) {
                 return
             }                        
             $("#order-form").addClass('hide')
             $("#loader-container").removeClass('hide')
-            $("#order-title").text("Übermittle Bestellung...")
+            $("#order-title").text("Übermittle Bestellung...")            
             axios({
                 method: 'post',                
-                url: 'https://calendariumculinarium.de/api/orders',
+                // url: 'https://calendariumculinarium.de/api/orders',
+                url: 'http://localhost:8000/api/orders',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8'
                 },
@@ -135,15 +258,37 @@ var app = new Vue({
                     "agrees_agb": this.agrees_agbs, 
                     "agrees_data_privacy": this.agrees_data_privacy
                 }
-            }).then(function (response) {
-                // handle success
-                $("#loader").addClass('hide')
+            }).then(function(response) {
+                // handle success                
+                $("#server-loader").addClass('hide')
                 $("#server-response").text(response.data)                
+                $("#server-response-2").text('Eine Auftragsbestätigung folgt per Mail.')
+                // $("#server-response-3").text()
+                var match = response.data.search("(').+?(')")
+                order_id = response.data.substring(match+1, match+10)                
                 $("#problem-button").addClass('hide')
                 $("#note-preorder").addClass('mute')
-                $("#order-title").text("Bestellung eingegangen! :)")
-            })
-            .catch(function (error) {
+                $("#order-title").text("Bestellung eingegangen!")                
+                if (this.payment == "paypal") {                                                            
+                    TOTAL = this.computeNumericPrice().toFixed(2)
+                    ORDER_ID = order_id.toString()                     
+                    STREET = (this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice) + " " + (this.different_delivery_address ? this.address_street_no_delivery.toString() : this.address_street_no_invoice.toString())                     
+                    CITY = this.different_delivery_address ? this.address_city_delivery : this.address_city_invoice
+                    CODE = this.different_delivery_address ? this.address_code_delivery.toString() : this.address_code_invoice.toString()
+                    COUNTRY = setCountryCode(this.different_delivery_address ? this.address_country_delivery : this.address_country_invoice)                                        
+                    if (COUNTRY == "UNKNOWN") {
+                        $("#server-response-3").text('Wir konnten Dein Länderkürzel nicht automatisch bestimmen.')
+                        $("#server-response-4").text('Bitte erledige Deine PayPal-Zahlung manuell. Unsere PayPal Adresse erfährst Du mit der Zahlungsaufforderung per Mail. Deine Bestellung ist eingegangen und wird von uns bearbeitet.')
+                        return
+                    }
+                    FULL_NAME = this.different_delivery_address ? (this.firstname_delivery + " " + this.lastname_delivery) : (this.firstname_invoice + " " + this.lastname_invoice)
+                    COMPANY = this.different_delivery_address ? this.company_delivery : this.company_invoice
+                    $("#paypal-button-container").removeClass('hide')                    
+                    this.preparePaypal()                    
+                    $("#paypal-loader").addClass('hide')
+                }                
+            }.bind(this))
+            .catch(function(error) {
                 // handle error
                 $("#order-title").text("Fehler! :(")
                 $("#loader").addClass('hide')
@@ -157,27 +302,8 @@ var app = new Vue({
         },
         backButtonClicked() {
             window.location.href = "/bestellen" + window.location.search
-        },
-        computeCurrentPrice() {
-            var discount = 0
-            if (this.amount < 3) {
-                discount = 0
-            } else if (this.amount < 5) {
-                discount = .1
-            } else if (this.amount < 50) {
-                discount = 0.15
-            } else {
-                discount = 0.2
-            }
-            var price_before_discount = this.amount * this.price
-            var price_after_discount = price_before_discount * (1-discount)
-            if (isNaN(price_after_discount)) {
-                return "Bitte Menge auswählen!"
-            } else {
-                return price_after_discount + (discount > 0 ? " (" + (discount*100) + "% Rabatt!)" : "")
-            }
-        }     
-    },
+        },        
+    },    
     mounted() {
         amnt = parseInt(getUrlParameter('amount'))
         this.amount = isNaN(amnt) ? 1 : amnt        
@@ -190,7 +316,7 @@ var app = new Vue({
         this.email = getUrlParameter('email')
         this.payment = getUrlParameter('payment')
         $("#payment-banktransfer").prop('checked', this.payment != "paypal")
-        $("#payment-paypal").prop('checked', this.payment == "paypal")
+        $("#payment-paypal").prop('checked', this.payment == "paypal")        
         this.address_street_delivery = getUrlParameter('address_street_delivery').replace(/\+/g, ' ')
         this.address_street_no_delivery = getUrlParameter('address_street_no_delivery').replace(/\+/g, ' ')
         this.address_code_delivery = getUrlParameter('address_code_delivery')
@@ -212,6 +338,6 @@ var app = new Vue({
         this.is_reseller = (getUrlParameter('is_reseller') == 'checked' || getUrlParameter('is_reseller') == 'on') ? true : false
         this.msg = getUrlParameter('message').replace(/\+/g, ' ')        
         $("#slow-food-member-check").prop('checked', this.sf_member)
-        $("#reseller-check").prop('checked', this.is_reseller)        
+        $("#reseller-check").prop('checked', this.is_reseller)           
     }
 })
