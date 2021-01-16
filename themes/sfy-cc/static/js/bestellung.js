@@ -124,14 +124,11 @@ var app = new Vue({
         preparePaypal() {            
             var head = document.getElementsByTagName('head')[0]
             var script = document.createElement('script')
+            // Sandbox
             // script.src = "https://www.paypal.com/sdk/js?client-id=ARDSKiyNT-7Me_5MbJnxO8o7eiwO63MEhj7rB4gjZG05egtPPwYxKzY-SYtDssmmKioVabqW1LmCVjeL&currency=EUR"            
+            // Live
             script.src = "https://www.paypal.com/sdk/js?client-id=AaajwREkp6udI8Cif5iEIJn-pTOU_q_t7McSR_XKDqmILqp4PLuNRX_6WIA1ETw8aveqOAhFuv1WTeBZ&currency=EUR"
-            script.type = 'text/javascript'               
-            console.log(STREET) 
-            console.log(COMPANY)
-            console.log(CITY)
-            console.log(CODE)
-            console.log(COUNTRY)
+            script.type = 'text/javascript'                           
             script.onload = function() {                                                     
                 paypal.Buttons({
                     createOrder: function(data, actions) {                    
@@ -231,8 +228,8 @@ var app = new Vue({
             $("#order-title").text("Übermittle Bestellung...")                        
             axios({
                 method: 'post',                
-                url: 'https://calendariumculinarium.de/api/orders',
-                // url: 'http://localhost:8000/api/orders',
+                // url: 'https://calendariumculinarium.de/api/orders',
+                url: 'http://localhost:8000/api/orders',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8'
                 },
@@ -242,7 +239,6 @@ var app = new Vue({
                     "company_invoice": this.company_invoice,
                     "first_name_invoice": this.firstname_invoice,
                     "last_name_invoice": this.lastname_invoice,
-                    "company_delivery": this.company_delivery,
                     "first_name_delivery": this.different_delivery_address ? this.firstname_delivery : this.firstname_invoice,     
                     "last_name_delivery": this.different_delivery_address ? this.lastname_delivery : this.lastname_invoice,                    
                     "email": this.email, 
@@ -250,7 +246,8 @@ var app = new Vue({
                     "address_street_no_invoice": this.address_street_no_invoice,
                     "address_code_invoice": this.address_code_invoice, 
                     "address_city_invoice": this.address_city_invoice, 
-                    "address_country_invoice": this.address_country_invoice, 
+                    "address_country_invoice": this.address_country_invoice,
+                    "company_delivery": this.different_delivery_address ? this.company_delivery : this.company_invoice,
                     "address_street_delivery": this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice,
                     "address_street_no_delivery": this.different_delivery_address ? this.address_street_no_delivery : this.address_street_no_invoice,
                     "address_code_delivery": this.different_delivery_address ? this.address_code_delivery : this.address_code_invoice, 
