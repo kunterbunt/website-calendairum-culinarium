@@ -228,8 +228,8 @@ var app = new Vue({
             $("#order-title").text("Übermittle Bestellung...")                        
             axios({
                 method: 'post',                
-                url: 'https://calendariumculinarium.de/api/orders',
-                // url: 'http://localhost:8000/api/orders',
+                // url: 'https://calendariumculinarium.de/api/orders',
+                url: 'http://localhost:8000/api/orders',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8'
                 },
@@ -239,25 +239,25 @@ var app = new Vue({
                     "company_invoice": this.company_invoice,
                     "first_name_invoice": this.firstname_invoice,
                     "last_name_invoice": this.lastname_invoice,
-                    "first_name_delivery": this.different_delivery_address ? this.firstname_delivery : this.firstname_invoice,     
-                    "last_name_delivery": this.different_delivery_address ? this.lastname_delivery : this.lastname_invoice,                    
-                    "email": this.email, 
+                    "first_name_delivery": this.different_delivery_address ? this.firstname_delivery : this.firstname_invoice,
+                    "last_name_delivery": this.different_delivery_address ? this.lastname_delivery : this.lastname_invoice,
+                    "email": this.email,
                     "address_street_invoice": this.address_street_invoice,
                     "address_street_no_invoice": this.address_street_no_invoice,
-                    "address_code_invoice": this.address_code_invoice, 
-                    "address_city_invoice": this.address_city_invoice, 
+                    "address_code_invoice": this.address_code_invoice,
+                    "address_city_invoice": this.address_city_invoice,
                     "address_country_invoice": this.address_country_invoice,
                     "company_delivery": this.different_delivery_address ? this.company_delivery : this.company_invoice,
                     "address_street_delivery": this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice,
                     "address_street_no_delivery": this.different_delivery_address ? this.address_street_no_delivery : this.address_street_no_invoice,
-                    "address_code_delivery": this.different_delivery_address ? this.address_code_delivery : this.address_code_invoice, 
-                    "address_city_delivery": this.different_delivery_address ? this.address_city_delivery : this.address_city_invoice,                     
-                    "address_country_delivery": this.different_delivery_address ? this.address_country_delivery : this.address_country_invoice,                     
+                    "address_code_delivery": this.different_delivery_address ? this.address_code_delivery : this.address_code_invoice,
+                    "address_city_delivery": this.different_delivery_address ? this.address_city_delivery : this.address_city_invoice,
+                    "address_country_delivery": this.different_delivery_address ? this.address_country_delivery : this.address_country_invoice,
                     "payment": this.payment,
-                    "is_reseller": this.is_reseller, 
-                    "slow_food_member": this.sf_member, 
+                    "is_reseller": this.is_reseller,
+                    "slow_food_member": this.sf_member,
                     "message": this.msg,
-                    "agrees_agb": this.agrees_agbs, 
+                    "agrees_agb": this.agrees_agbs,
                     "agrees_data_privacy": this.agrees_data_privacy
                 }
             }).then(function(response) {

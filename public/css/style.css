@@ -1,6 +1,7 @@
 body {
     font-family: 'Noto Serif', serif;
     color: #222;
+    background-color: white;
 }
 
 .carousel-item img {
@@ -42,18 +43,43 @@ body {
     line-height: 20pt;
 }
 
+#kaufen {
+    background-color: #f3f3f4;
+}
 #kaufen h2 {
     margin-bottom: 1em;
 }
-
-#description .row {    
-    margin-bottom: 0;
-    line-height: 22pt;
+#kaufen p {
+    margin: 0;
 }
 
-#detailed-description {
-    padding-top: 2em;
-    padding-bottom: 2em;    
+p.bold {
+    font-weight: bold !important;
+}
+.profile img {
+    width: 128px;
+    height: 128px;
+}
+.profile p.bold {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+#introbox .row {
+    margin-bottom: 0;
+    line-height: 22pt;
+    background-color: #f3f3f4;
+}
+
+#team {
+    background-color: #f3f3f4;
+}
+
+.detailed-description p, .description p {
+    text-align: center;
+}
+.detailed-description a, .description a {
+    font-size: 12pt;
 }
 
 .detail-img-container {
@@ -63,11 +89,35 @@ body {
 .circle {
     border-radius: 50%;    
 }
+.logos {
+    margin-top: 3em;
+}
 .logo {
-    height: 128px;
+    height: 64px;
 }
 .info-icon {
-    height: 128px;
+    /*height: 128px;*/
+    max-height: 128px;
+    max-width: 20vw;
+}
+.separator {
+    width: 64px;
+}
+
+.margin-btm {
+    margin-bottom: 1em;
+}
+.margin-btm-lg {
+    margin-bottom: 3em;
+ }
+.margin-top {
+    margin-top: 1em;
+}
+.margin-top-lg {
+    margin-top: 3em;
+}
+.padding-btm-lg {
+    padding-bottom: 3em;
 }
 
 .logosf {
@@ -105,6 +155,10 @@ p {
 
 .mute {
     color: gray;
+}
+
+.jumbotron {
+    background-color: white;
 }
 
 #features {
@@ -148,6 +202,10 @@ footer p {
     margin: 0;
 }
 
+.btn {
+    border-radius: 0;
+}
+
 .btn-primary {
     background-color: #d40000;
     color: white;
@@ -165,8 +223,17 @@ footer p {
 }
 
 .dark {
-    color: #dfdfdf;;
-    background-color: #272727;;
+    color: #dfdfdf;
+    background-color: #272727;
+}
+
+.black {
+    color: #222;
+    text-decoration: underline;
+}
+
+a.black:hover {
+    color: #222;
 }
 
 a.card-link {
