@@ -57,12 +57,15 @@ p.bold {
     font-weight: bold !important;
 }
 .profile img {
-    width: 128px;
-    height: 128px;
+    max-width: 96px;
+    max-height: 96px;
 }
 .profile p.bold {
     margin-top: 1em;
     margin-bottom: 0;
+}
+.profile p {
+    font-size: 10pt;
 }
 
 #introbox .row {
