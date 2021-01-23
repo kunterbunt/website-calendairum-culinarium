@@ -12,6 +12,8 @@ body {
     text-align: right;
     color: lightgray;
     /*position: absolute;*/
+    /*width: 300px;*/
+    /*left: 80vw;*/
     /*display: block;*/
     /*top: 85vh;*/
     /*left: 90vw;*/
@@ -194,8 +196,9 @@ p {
     /*-moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);*/
     box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.14), 5px 5px 5px -5px rgba(0, 0, 0, 0.12), 5px 5px 5px -5px rgba(0, 0, 0, 0.2);
 }
-#img-slider p {
-    color: gray;
+
+p.gray {
+    color: white;
 }
 
 a {
