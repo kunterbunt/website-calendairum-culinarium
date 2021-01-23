@@ -8,18 +8,34 @@ body {
     object-fit: cover;
 }
 
-.carousel-caption h1 {    
-    font-size: 32pt;
-    line-height: 30pt;
+.carousel-caption {
+    text-align: right;
+    color: lightgray;
+    /*position: absolute;*/
+    /*display: block;*/
+    /*top: 85vh;*/
+    /*left: 90vw;*/
+    /*margin: -100px 0 0 0;*/
+    /*height: 50px;*/
+    /*width: 100px;*/
 }
 
-.carousel-caption h5 {
-    line-height: 18pt;
+/*.carousel-caption p {*/
+/*    -webkit-transform: rotate(270deg);*/
+/*    -moz-transform: rotate(270deg);*/
+/*    -o-transform: rotate(270deg);*/
+/*    -ms-transform: rotate(270deg);*/
+/*    transform: rotate(270deg);*/
+/*}*/
+
+.navbar-brand img {
+    height: 40px;
 }
 
 #fixed {    
     height: calc(100vh - 72px);    
-    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/theme-imgs/header.jpg") no-repeat center top; /* fixed */
+    /*background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/theme-imgs/header.jpg") no-repeat center top; !* fixed *!*/
+    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/theme-imgs/coverimg.jpg") no-repeat center top; /* fixed */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -166,10 +182,20 @@ p {
 
 #features {
     margin-bottom: 0;
+    padding: 32px;
 }
 
-#features img {
-    margin-top: 2em;
+.no-padding {
+    padding: 0;
+}
+
+#img-slider .carousel-inner {
+    /*-webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);*/
+    /*-moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);*/
+    box-shadow: 5px 5px 5px -5px rgba(0, 0, 0, 0.14), 5px 5px 5px -5px rgba(0, 0, 0, 0.12), 5px 5px 5px -5px rgba(0, 0, 0, 0.2);
+}
+#img-slider p {
+    color: gray;
 }
 
 a {
