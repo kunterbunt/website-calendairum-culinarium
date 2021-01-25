@@ -28,6 +28,8 @@ body {
 .detailed-description .copyright, .detailed-description .copyright a, .copyright a {
     color: gray;
     font-size: 9pt;
+}
+.detailed-description .copyright a, .copyright a {
     text-decoration: underline;
 }
 
