@@ -10,7 +10,6 @@ body {
 
 .carousel-caption {
     text-align: right;
-    color: lightgray;
     /*position: absolute;*/
     /*width: 300px;*/
     /*left: 80vw;*/
@@ -20,6 +19,16 @@ body {
     /*margin: -100px 0 0 0;*/
     /*height: 50px;*/
     /*width: 100px;*/
+}
+
+.carousel-caption .copyright, .carousel-caption .copyright a {
+    color: lightgray;
+    font-size: 9pt;
+}
+.detailed-description .copyright, .detailed-description .copyright a, .copyright a {
+    color: gray;
+    font-size: 9pt;
+    text-decoration: underline;
 }
 
 /*.carousel-caption p {*/
