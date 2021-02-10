@@ -17,15 +17,15 @@ var getUrlParameter = function getUrlParameter(sParam) {
 supported_countries = ["Deutschland", "Österreich", "Niederlande", "Schweiz", "Frankfreich"]
 
 var setCountryCode = function setCountryCode(country_name) {
-    if (country_name == "Deutschland")
+    if (country_name === "Deutschland")
         return "DE"
-    else if (country_name == "Österreich")
+    else if (country_name === "Österreich")
         return "AT"
-    else if (country_name == "Niederlande")
+    else if (country_name === "Niederlande")
         return "NL"
-    else if (country_name == "Schweiz")
+    else if (country_name === "Schweiz")
         return "CH"
-    else if (country_name == "Frankreich" || country_name == "France")
+    else if (country_name === "Frankreich" || country_name === "France")
         return "FR"            
     else 
         return "UNKNOWN"
@@ -90,19 +90,19 @@ var app = new Vue({
                     window.alert("Die Postleitzahl ist nicht gültig (Lieferadresse)!")
                     return false
                 }
-                if (this.firstname_delivery == null || this.firstname_delivery == "" || this.lastname_delivery == null || this.lastname_delivery == "") {
+                if (this.firstname_delivery == null || this.firstname_delivery === "" || this.lastname_delivery == null || this.lastname_delivery === "") {
                     window.alert("Bitte Namen für Lieferadresse angeben!" + this.first_name_delivery)
                     return false
                 }
-                if (this.address_street_delivery == null || this.address_street_delivery == "") {
+                if (this.address_street_delivery == null || this.address_street_delivery === "") {
                     window.alert("Bitte Straße für Lieferadresse angeben!")
                     return false
                 }
-                if (this.address_street_no_delivery == null || this.address_street_no_delivery == "") {
+                if (this.address_street_no_delivery == null || this.address_street_no_delivery === "") {
                     window.alert("Bitte Hausnummer für Lieferadresse angeben!")
                     return false
                 }
-                if (this.address_city_delivery == null || this.address_city_delivery == "") {
+                if (this.address_city_delivery == null || this.address_city_delivery === "") {
                     window.alert("Bitte Stadt für Lieferadresse angeben!")
                     return false
                 }
@@ -159,8 +159,8 @@ var app = new Vue({
                             reference_id: ORDER_ID,
                             shipping: {
                                 address: {
-                                    address_line_1: (COMPANY == null || COMPANY == "") ? STREET : COMPANY,
-                                    address_line_2: (COMPANY == null || COMPANY == "") ? "" : STREET,
+                                    address_line_1: (COMPANY == null || COMPANY === "") ? STREET : COMPANY,
+                                    address_line_2: (COMPANY == null || COMPANY === "") ? "" : STREET,
                                     admin_area_1: "",
                                     admin_area_2: CITY,                                    
                                     postal_code: CODE,                                    
@@ -271,14 +271,14 @@ var app = new Vue({
                 $("#problem-button").addClass('hide')
                 $("#note-preorder").addClass('mute')
                 $("#order-title").text("Bestellung eingegangen!")                
-                if (this.payment == "paypal") {                                                            
+                if (this.payment === "paypal") {
                     TOTAL = this.computeNumericPrice().toFixed(2)
                     ORDER_ID = order_id.toString()                                         
                     STREET = (this.different_delivery_address ? this.address_street_delivery : this.address_street_invoice) + " " + (this.different_delivery_address ? this.address_street_no_delivery.toString() : this.address_street_no_invoice.toString())                                         
                     CITY = this.different_delivery_address ? this.address_city_delivery : this.address_city_invoice
                     CODE = this.different_delivery_address ? this.address_code_delivery.toString() : this.address_code_invoice.toString()
                     COUNTRY = setCountryCode(this.different_delivery_address ? this.address_country_delivery : this.address_country_invoice)                                        
-                    if (COUNTRY == "UNKNOWN") {
+                    if (COUNTRY === "UNKNOWN") {
                         $("#server-response-3").text('Wir konnten Dein Länderkürzel nicht automatisch bestimmen.')
                         $("#server-response-4").text('Bitte erledige Deine PayPal-Zahlung manuell. Unsere PayPal Adresse erfährst Du mit der Zahlungsaufforderung per Mail. Deine Bestellung ist eingegangen und wird von uns bearbeitet.')
                         return
@@ -317,15 +317,15 @@ var app = new Vue({
         this.lastname_invoice = getUrlParameter('lastname_invoice').replace(/\+/g, ' ')                
         this.email = getUrlParameter('email')
         this.payment = getUrlParameter('payment')
-        $("#payment-banktransfer").prop('checked', this.payment != "paypal")
-        $("#payment-paypal").prop('checked', this.payment == "paypal")        
+        $("#payment-banktransfer").prop('checked', this.payment !== "paypal")
+        $("#payment-paypal").prop('checked', this.payment === "paypal")
         this.address_street_delivery = getUrlParameter('address_street_delivery').replace(/\+/g, ' ')
         this.address_street_no_delivery = getUrlParameter('address_street_no_delivery').replace(/\+/g, ' ')
         this.address_code_delivery = getUrlParameter('address_code_delivery')
         this.address_city_delivery = getUrlParameter('address_city_delivery').replace(/\+/g, ' ')        
         country_delivery = getUrlParameter('address_country_delivery').replace(/\+/g, ' ')        
-        this.address_country_delivery = country_delivery == "" ? "Deutschland" : country_delivery        
-        this.different_delivery_address = (getUrlParameter('different_delivery_address') == 'checked' || getUrlParameter('different_delivery_address') == 'on' || getUrlParameter('different_delivery_address') == 'true') ? true : false        
+        this.address_country_delivery = country_delivery === "" ? "Deutschland" : country_delivery
+        this.different_delivery_address = (getUrlParameter('different_delivery_address') === 'checked' || getUrlParameter('different_delivery_address') === 'on' || getUrlParameter('different_delivery_address') === 'true') ? true : false
         $("#different-delivery-check").prop('checked', this.different_delivery_address)
         if (this.different_delivery_address) {
             $("#delivery-fields").collapse()
@@ -335,9 +335,9 @@ var app = new Vue({
         this.address_code_invoice = getUrlParameter('address_code_invoice')
         this.address_city_invoice = getUrlParameter('address_city_invoice').replace(/\+/g, ' ')        
         country_invoice = getUrlParameter('address_country_invoice').replace(/\+/g, ' ')
-        this.address_country_invoice = country_invoice == "" ? "Deutschland" : country_invoice
-        this.sf_member = (getUrlParameter('slow_food_member') == 'checked' || getUrlParameter('slow_food_member') == 'on') ? true : false
-        this.is_reseller = (getUrlParameter('is_reseller') == 'checked' || getUrlParameter('is_reseller') == 'on') ? true : false
+        this.address_country_invoice = country_invoice === "" ? "Deutschland" : country_invoice
+        this.sf_member = (getUrlParameter('slow_food_member') === 'checked' || getUrlParameter('slow_food_member') === 'on') ? true : false
+        this.is_reseller = (getUrlParameter('is_reseller') === 'checked' || getUrlParameter('is_reseller') === 'on') ? true : false
         this.msg = getUrlParameter('message').replace(/\+/g, ' ')        
         $("#slow-food-member-check").prop('checked', this.sf_member)
         $("#reseller-check").prop('checked', this.is_reseller)           
