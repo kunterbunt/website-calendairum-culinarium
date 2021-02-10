@@ -47,8 +47,8 @@ body {
 
 #fixed {    
     height: calc(100vh - 72px);    
-    /*background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/theme-imgs/header.jpg") no-repeat center top; !* fixed *!*/
-    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/theme-imgs/coverimg.jpg") no-repeat center top; /* fixed */
+    /*background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/imgs/header.jpg") no-repeat center top; !* fixed *!*/
+    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5) ), url("/imgs/coverimg.jpg") no-repeat center top; /* fixed */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
