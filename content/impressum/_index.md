@@ -1,5 +1,5 @@
 ---
-title: "Calendarium Culinarium"
+title: "Impressum"
 ---
 Das Portal [https://calendariumculinarium.de/](https://calendariumculinarium.de/) wird von Slow Food Deutschland e.V. unterhalten.
 

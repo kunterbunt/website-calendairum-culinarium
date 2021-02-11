@@ -1,5 +1,5 @@
 ---
-title: "Calendarium Culinarium"
+title: "Datenschutz"
 ---
 ### Datenschutz:
 Die Datenschutzerklärung, das Öffentliche Verfahrensverzeichnis sowie die Kontaktmöglichkeit zum Datenschutzbeauftragten finden Sie [hier](https://www.slowfood.de/service/datenschutz).
