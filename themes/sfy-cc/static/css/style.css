@@ -212,15 +212,6 @@ p.gray {
     color: white;
 }
 
-a {
-    color: white;
-}
-
-a:hover {
-    color: white;
-    
-}
-
 footer {
     color: #dfdfdf;
     background-color: #272727;;
@@ -365,11 +356,13 @@ input.no-spinner[type=number] {
     text-decoration: underline;
 }
 
-#agbs h1 {
-    font-size: xx-large;
+a {
+    color: gray;
+    text-decoration: none;
 }
-#agbs h2 {
-    font-size: x-large;
+
+a:hover {
+    color: #222;
 }
 
 #order-form a:hover, #agbs a:hover, #datenschutz a:hover, #impressum a:hover {

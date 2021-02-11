@@ -1,0 +1,1 @@
+50 handgezeichnete Obst- und Gemüsesorten bilden die wundervolle Vielfalt hiesiger Lebensmittel ab. In den Kreisen wird zusätzlich dargestellt, wann das jeweilige Produkt in Deutschland verfügbar ist – sei es „Frisch vom Feld“ oder als „Lagerware“.

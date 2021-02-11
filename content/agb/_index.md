@@ -2,7 +2,7 @@
 title: Allgemeine Geschäftsbedingungen
 
 ---
-# §1 Geltungsbereich, Begriffsbestimmungen
+### §1 Geltungsbereich, Begriffsbestimmungen
 
 (1) Das Portal [https://calendariumculinarium.de/](https://calendariumculinarium.de/) wird von Slow Food Deutschland e.V. unterhalten. Das Vertragsverhältnis besteht ausschließlich zwischen der\*dem K\*nd\*in un\*d Slow Food Deutschland e.V (im Folgenden SFD) unter Anwendung der nachstehenden Bedingungen (AGB), die die\*der Kund\*in durch Erteilung des Auftrages oder Annahme der Leistungen anerkennt.
 
@@ -10,7 +10,7 @@ title: Allgemeine Geschäftsbedingungen
 
 (3) Abweichende Allgemeine Geschäftsbedingungen der\*des Kund\*in finden keine Anwendung, auch wenn SFD ihnen nicht ausdrücklich widerspricht. Die AGB gelten für die gesamte Dauer des zwischen der\*dem Kund\*in und SFD zustande kommenden Kaufvertrages.
 
-# §2 Vertragsschluss
+### §2 Vertragsschluss
 
 (1) Die auf der Webseite [https://calendariumculinarium.de/](https://calendariumculinarium.de/) enthaltenen Produktdarstellungen stellen eine unverbindliche Aufforderung an die\*den Kund\*in dar, ein Angebot abzugeben.
 
@@ -26,11 +26,11 @@ title: Allgemeine Geschäftsbedingungen
 
 (7) Die\*der Kund\*in sichert zu, dass die von ihr\*ihm im Rahmen des Vertragsangebots oder des Vertragsschlusses gemachten Angaben über ihre\*seine Person und sonstige vertragsrelevante Umstände, vor allem die von ihr*ihm zur Kaufabwicklung angegebene E-Mail-Adresse, vollständig und richtig sind.
 
-# §3 Vertragsgegenstand
+### §3 Vertragsgegenstand
 
 (1) Leistungsgegenstand ist ein Posterkalender, wie dieser auf der Seite [https://calendariumculinarium.de/](https://calendariumculinarium.de/) gezeigt und beschrieben ist.
 
-# §4 Preise und Versandkosten
+### §4 Preise und Versandkosten
 
 (1) Die Preise sind Endpreise in Euro. Sie enthalten durchgehend die gesetzliche Mehrwertsteuer.
 
@@ -40,15 +40,15 @@ Lieferungen innerhalb der Bundesrepublik Deutschland: 0,00 Euro pauschal.
 
 Lieferungen außerhalb der Bundesrepublik Deutschland: zu den jeweils aktuellen Konditionen der Deutschen Post AG für das Bestimmungsland.
 
-# §5 Pflichten der\*des Kund\*in
+### §5 Pflichten der\*des Kund\*in
 
 (1) Soweit die\*der Kund\*in das Angebot von SFD für Dritte nutzen möchte und ausdrücklich eine Überraschung Dritter wünscht, kann es erforderlich sein, dass die\*der Kund\*in die Kontaktdaten der Person, die die Leistung erhält, SFD mitteilt. Die unautorisierte Weitergabe der Kontaktdaten Dritter, wie Postadresse, stellt grundsätzlich einen Eingriff in die Privatsphäre der\*des Dritten seitens der\*des Kund\*in dar. Die\*der Kund\*in muss in eigener Verantwortung bei Weitergabe der Daten Dritter die hypothetische Einwilligung der Datenweitergabe an SFD zur Ermöglichung des Versandes gewährleisten. Die\*der Kund\*in verpflichtet sich gegenüber SFD, keine Daten Dritter weiterzugeben, bei denen sie\*er nicht von einer Zustimmung zur Datenweitergabe ausgehen kann.
 
-# §6 Weiterverkauf
+### §6 Weiterverkauf
 
 (1) Möchte ein\*e Kund\*in den Posterkalender gewerblich und kommerziell weiterverkaufen hat die\*der Kund\*in SFD darüber zu informieren. Diese Möglichkeit wird der\*dem Kund\*in vor Klicken des Buttons „Jetzt kaufen“ (o.ä.) gegeben und hat auf diesem Wege zu erfolgen.
 
-# §7 Zahlungsmodalitäten
+### §7 Zahlungsmodalitäten
 
 (1) Die\*der Kund\*in kann die Zahlung per Vorkasse oder PayPal vornehmen. Die\*der Kund\*in hat alle Kosten zu ersetzen, die dadurch entstehen, dass eine Zahlung zurückgebucht wird und die\*der Kund\*in dies zu vertreten hat. Der\*dem Kund\*in steht der Nachweis frei, dass die Kosten nicht oder nicht in der geltend gemachten Höhe entstanden sind.
 
@@ -56,15 +56,15 @@ Lieferungen außerhalb der Bundesrepublik Deutschland: zu den jeweils aktuellen 
 
 (3) Die Zahlung des Entgelts ist unmittelbar mit Vertragsschluss fällig. Erfolgt die Zahlung nicht zeitgerecht behält sich SFD vor vom Vertrag zurück zutreten. Der Kunde wird darüber per E-Mail informiert.
 
-# §8 Gewährleistung
+### §8 Gewährleistung
 
 (1) Liegt ein Mangel der Kaufsache vor, gelten die gesetzlichen Gewährleistungsvorschriften der §§ 434 ff. BGB.
 
 (2) Die\*der Kund\*in wird gebeten sich im Falle einer Gewährleistung mit dem Kundenservice (hallo@calendariumculinarium.de) in Verbindung zu setzen und die Beschädigung der Ware durch ein Foto zu dokumentieren.
 
-# §9 Widerrufsbelehrung
+### §9 Widerrufsbelehrung
 
-## Widerrufsrecht
+#### Widerrufsrecht
 
 Die\*der Kund\*in hat das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
 
@@ -82,7 +82,7 @@ Dieser erfolgt mittels einer eindeutigen Erklärung (z.B. ein mit der Post versa
 
 Zur Wahrung der Widerrufsfrist reicht es aus, dass die\*der Kund\*in die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absendet.
 
-## Folgen des Widerrufs
+#### Folgen des Widerrufs
 
 Wenn der Vertrag widerrufen wird, überweist SFD alle Zahlungen, die von der\*dem Kund\*in erhalten wurden, einschließlich der Lieferkosten, unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag, an dem die Mitteilung über den Widerruf dieses Vertrags bei SFD eingegangen ist. Für diese Rückzahlung verwendet SFD dasselbe Zahlungsmittel, das bei der ursprünglichen Transaktion eingesetzt wurde, es sei denn, es wurde mit der\*dem Kund\*in ausdrücklich etwas anderes vereinbart; in keinem Fall werden der\*dem Kund\*in wegen dieser Rückzahlung Entgelte berechnet. SFD kann die Rückzahlung verweigern, bis die Waren wieder zurückerhalten wurden oder bis die\*der Kund\*in den Nachweis erbracht hat, dass die\*der Kund\*in die Waren zurückgesandt hat, je nachdem, welches der frühere Zeitpunkt ist. Die Rücksendefrist ist gewahrt, wenn die\*der Kund\*in die Waren vor Ablauf der Frist von vierzehn Tagen absendet.
 
@@ -92,11 +92,11 @@ Die\*der Kund\*in muss für einen etwaigen Wertverlust der Waren nur aufkommen, 
 
 \- Ende der Widerrufsbelehrung -
 
-# §10 Hinweise zur Datenverarbeitung
+### §10 Hinweise zur Datenverarbeitung
 
 Personenbezogenen Daten werden ausschließlich für Zwecke rund um die Bestellung, Kaufabwicklung und den Versand verwendet. Persönliche Daten werden selbstverständlich vertraulich behandelt und nicht an Dritte weitergegeben. Wir möchten hier nochmals ausdrücklich auf die Datenschutzerklärung auf unserer Webseite verweisen.
 
-# §11 Schlussbestimmungen
+### §11 Schlussbestimmungen
 
 (1) Gerichtsstand für alle im Zusammenhang mit diesem Vertrag stehenden Streitigkeiten ist der Sitz von SFD, sofern die\*der Kund\*in Unternehmer*in, eine juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
 

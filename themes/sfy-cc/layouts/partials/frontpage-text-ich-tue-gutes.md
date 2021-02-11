@@ -1,0 +1,1 @@
+Der Saisonkalender ist in einem ehrenamtlichen Projekt von Slow Food Youth entstanden. Mit Deinem Kauf unterstützt Du die Arbeit von Slow Food Deutschland e.V. und leistest so einen kleinen Beitrag zu einem zukunftsfähigen Ernährungssystem.
