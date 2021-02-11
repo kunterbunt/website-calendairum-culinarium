@@ -1,5 +1,6 @@
 ---
-title: "Calendarium Culinarium"
+title: Allgemeine Geschäftsbedingungen
+
 ---
 # §1 Geltungsbereich, Begriffsbestimmungen
 (1) Das Portal [https://calendariumculinarium.de/](https://calendariumculinarium.de/) wird von Slow Food Deutschland e.V. unterhalten. Das Vertragsverhältnis besteht ausschließlich zwischen der\*dem Kund\*in und Slow Food Deutschland e.V (im Folgenden SFD) unter Anwendung der nachstehenden Bedingungen (AGB), die die\*der Kund\*in durch Erteilung des Auftrages oder Annahme der Leistungen anerkennt.
@@ -101,4 +102,3 @@ Personenbezogenen Daten werden ausschließlich für Zwecke rund um die Bestellun
 (2) Sollten einzelne Bestimmungen dieser AGB unwirksam oder im Einzelfall, z. B. mangels Unternehmereigenschaft der\*des Vertragspartner\*in, nicht anwendbar sein, so bleibt die Wirksamkeit aller übrigen Bestimmungen unberührt.
 
 (3) Es gilt das Recht der Bundesrepublik Deutschland. Die Anwendung von UN-Kaufrecht ist ausgeschlossen. Die Vertragssprache ist Deutsch.
-
