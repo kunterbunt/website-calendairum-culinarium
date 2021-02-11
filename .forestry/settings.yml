@@ -4,6 +4,10 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
+- type: document
+  path: themes/sfy-cc/layouts/index.html
+  label: Frontpage
+  match: "**/*"
 - type: directory
   path: themes/sfy-cc/layouts/partials
   label: Partials
