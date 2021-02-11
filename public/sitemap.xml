@@ -3,11 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://calendariumculinarium.de/</loc>
+    <loc>https://calendariumculinarium.de/agb/</loc>
   </url>
   
   <url>
-    <loc>https://calendariumculinarium.de/agb/</loc>
+    <loc>https://calendariumculinarium.de/</loc>
   </url>
   
   <url>
@@ -19,19 +19,15 @@
   </url>
   
   <url>
+    <loc>https://calendariumculinarium.de/categories/</loc>
+  </url>
+  
+  <url>
     <loc>https://calendariumculinarium.de/datenschutz/</loc>
   </url>
   
   <url>
     <loc>https://calendariumculinarium.de/impressum/</loc>
-  </url>
-  
-  <url>
-    <loc>https://calendariumculinarium.de/paypal/</loc>
-  </url>
-  
-  <url>
-    <loc>https://calendariumculinarium.de/categories/</loc>
   </url>
   
   <url>
