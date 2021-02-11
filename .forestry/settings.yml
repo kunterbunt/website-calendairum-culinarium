@@ -10,17 +10,7 @@ sections:
   match: "**/*"
 - type: directory
   path: themes/sfy-cc/layouts/partials
-  label: Partials
-  create: all
-  match: "**/*"
-- type: directory
-  path: content
-  label: Pages
-  create: all
-  match: "*"
-- type: directory
-  path: content/paypal
-  label: Paypal
+  label: Textschnipsel
   create: all
   match: "**/*"
 - type: directory
@@ -31,16 +21,6 @@ sections:
 - type: directory
   path: content/datenschutz
   label: Datenschutz
-  create: all
-  match: "**/*"
-- type: directory
-  path: content/bestellung
-  label: Bestellung
-  create: all
-  match: "**/*"
-- type: directory
-  path: content/bestellen
-  label: Bestellen
   create: all
   match: "**/*"
 - type: directory
