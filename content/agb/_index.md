@@ -28,7 +28,7 @@ title: Allgemeine Geschäftsbedingungen
 
 # §3 Vertragsgegenstand
 
-(1) Leistungsgegenstand ist ein Posterkalender, wie dieser auf der Seite <a href="https://calendariumculinarium.de/">https://calendariumculinarium.de/</a> gezeigt und beschrieben ist.
+(1) Leistungsgegenstand ist ein Posterkalender, wie dieser auf der Seite [https://calendariumculinarium.de/](https://calendariumculinarium.de/) gezeigt und beschrieben ist.
 
 # §4 Preise und Versandkosten
 
