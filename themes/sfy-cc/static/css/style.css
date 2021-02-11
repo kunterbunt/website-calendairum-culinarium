@@ -365,6 +365,13 @@ input.no-spinner[type=number] {
     text-decoration: underline;
 }
 
+#agbs h1 {
+    font-size: xx-large;
+}
+#agbs h2 {
+    font-size: x-large;
+}
+
 #order-form a:hover, #agbs a:hover, #datenschutz a:hover, #impressum a:hover {
     color: black;
 }

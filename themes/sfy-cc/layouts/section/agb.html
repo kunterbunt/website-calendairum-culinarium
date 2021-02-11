@@ -13,8 +13,8 @@
                   <h1 class="card-title">Allgemeine Geschäftsbedingungen</h1>                  
                   <a href="/agb/agb.pdf" class="btn btn-outline-dark btn-lg" style="margin-top: 1em;">Zur PDF-Version</a>
                 </div>                
-                <div class="card-body">                    
-                    {{ partial "text-agb.html" . }}                                                                        
+                <div id="agbs" class="card-body">
+                    {{ .Content }}
                 </div>
             </div>
         </div>
