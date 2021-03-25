@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://calendariumculinarium.de/agb/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/bestellen/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/bestellung/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/datenschutz/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/impressum/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://calendariumculinarium.de/tags/</loc>
   </url>
-  
 </urlset>
