@@ -73,7 +73,7 @@ Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag an dem die\*der Kund\*in od
 Der Widerruf richtet sich an:
 
 Slow Food Deutschland e. V.  
-Luisenstr. 45  
+Marienstr. 30
 10117 Berlin
 
 E-Mail: hallo@calendariumculinarium.de

@@ -4,7 +4,7 @@ title: "Impressum"
 Das Portal [https://calendariumculinarium.de/](https://calendariumculinarium.de/) wird von Slow Food Deutschland e.V. unterhalten.
 
 Slow Food Deutschland e.V.  
-Luisenstr. 45  
+Marienstr. 30
 10117 Berlin  
 Tel. (0 30) 2 00 04 75-0  
 Fax (0 30) 2 00 04 75-99  
@@ -24,7 +24,7 @@ Klaus Flesch, Beisitzer
 
 #### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 Dr. Nina Wolff  
-Luisenstraße 45  
+Marienstr. 30
 10117 Berlin
 
 Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
