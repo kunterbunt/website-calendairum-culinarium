@@ -228,7 +228,7 @@ var app = new Vue({
             $("#order-title").text("Übermittle Bestellung...")                        
             axios({
                 method: 'post',                
-                url: 'https://calendariumculinarium.de/api/orders',
+                url: '/api/orders',
                 // url: 'http://localhost:8000/api/orders',
                 headers: {
                     'Content-Type': 'application/json; charset=utf-8'
